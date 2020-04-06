@@ -1,0 +1,36 @@
+{
+    "name": "@getyoti/react-native-yoti-doc-scan",
+    "version": "1.0.0",
+    "description": "Yoti Doc Scan for React Native",
+    "main": "YotiDocScan.js",
+    "license": "SEE LICENSE IN LICENSE",
+    "author": "Yoti Ltd",
+    "contributors": [],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:getyoti/yoti-doc-scan-react-native.git"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb": "^18.1.0",
+        "eslint-plugin-react": "^7.19.0",
+        "react": "^16.7.0",
+        "react-dom": "^16.7.0",
+        "react-hot-loader": "^4.12.20",
+        "react-native": "^0.59.1"
+    },
+    "dependencies": {
+        "keymirror": "^0.1.1",
+        "prop-types": "^15.7.2"
+    },
+    "scripts": {
+        "test": "node_modules/.bin/eslint *.js"
+    },
+    "files": [
+        "android",
+        "YotiDocScan.js",
+        "ios",
+        "react-native-yoti-doc-scan.podspec"
+    ]
+}
