@@ -2,7 +2,7 @@
 
 # Yoti Doc Scan SDK for React Native
 
-Yoti is an identity checking platform that allows organisations to verify who people are, online and in person. The Yoti Doc Scan SDK allows the user to take a photo of their identifying document which we verify instantly and prepare a response which your system can then retrieve. Further information can be found in the [documentation](https://developers.yoti.com/yoti-doc-scan).
+Yoti is an identity checking platform that allows organisations to verify who people are, online and in person. The Yoti Doc Scan SDK allows the user to take a photo of their identifying document which we verify instantly and prepare a response which your system can then retrieve. Further information can be found in the [documentation](https://developers.yoti.com/yoti/getting-started-docscan).
 
 ## Prerequisites
 
