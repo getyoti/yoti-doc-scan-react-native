@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.license        = package['license']
   s.author         = package['author']
   s.homepage       = 'https://github.com/getyoti/yoti-doc-scan-react-native'
-  s.source         = { :git => "https://github.com/lampkicking/yoti-docs-react-native.git", :tag => "#{s.version}" }
+  s.source         = { :git => "https://github.com/getyoti/yoti-doc-scan-react-native.git", :tag => "#{s.version}" }
   s.source_files   = "ios/**/*.{h,m}"
   s.platform       = :ios, "11.0"
   s.dependency "React"
