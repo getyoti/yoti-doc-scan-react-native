@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+android {
+    compileSdkVersion safeExtGet('compileSdkVersion', 28)
+    buildToolsVersion safeExtGet('buildToolsVersion', '28.0.3')
+
+    defaultConfig {
+        minSdkVersion safeExtGet('minSdkVersion', 16)
+        targetSdkVersion safeExtGet('targetSdkVersion', 28)
+        versionCode 1
+        versionName "1.0.0"
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+        exclude "**/kotlin/**"
+    }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+
+}
+
+dependencies {
+    //noinspection GradleDynamicVersion
+    implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
+    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:2.1.0'
+    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:2.1.0'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.microblink.com' }
+        maven { url "https://jitpack.io" }
+    }
+}
