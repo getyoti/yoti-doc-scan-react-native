@@ -6,7 +6,7 @@ Yoti is an identity checking platform that allows organisations to verify who pe
 
 ## Prerequisites
 
-A supporting Yoti Doc Scan SDK backend installation is required. Learn more about the backend SDK in the [Getting Started guide](https://developers.yoti.com/yoti-doc-scan/getting-started).
+A supporting Yoti Doc Scan SDK backend installation is required. Learn more about the backend SDK in the [Getting Started guide](https://developers.yoti.com/yoti/getting-started-docscan).
 
 ## React Native >= 0.60.0 installation
 
