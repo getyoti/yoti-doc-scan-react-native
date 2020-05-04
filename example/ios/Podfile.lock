@@ -183,7 +183,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
   - React-jsinspector (0.61.5)
-  - react-native-yoti-doc-scan (1.0.0):
+  - react-native-yoti-doc-scan (1.1.0):
     - React
     - YotiSDKDocument
     - YotiSDKZoom
