@@ -36,7 +36,8 @@ android {
 }
 
 dependencies {
-    //noinspection GradleDynamicVersion
+    classpath "com.android.tools.build:gradle:3.6.2"
+
     implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
     implementation 'com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:2.2.0'
     implementation 'com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:2.2.0'
