@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.homepage       = 'https://github.com/getyoti/yoti-doc-scan-react-native'
   s.source         = { :git => "https://github.com/getyoti/yoti-doc-scan-react-native.git", :tag => "#{s.version}" }
   s.source_files   = 'ios/**/*.{h,m}'
-  s.platform       = :ios, '11.0'
+  s.platform       = :ios, '11.4'
   s.dependency 'React'
   s.dependency 'YotiSDKDocument','2.1.1'
   s.dependency 'YotiSDKZoom','2.1.1'
