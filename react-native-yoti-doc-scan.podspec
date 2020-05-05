@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source         = { :git => "https://github.com/getyoti/yoti-doc-scan-react-native.git", :tag => "#{s.version}" }
   s.source_files   = 'ios/**/*.{h,m}'
   s.platform       = :ios, '11.0'
-  s.dependency 'React','2.1.1'
+  s.dependency 'React'
   s.dependency 'YotiSDKDocument','2.1.1'
   s.dependency 'YotiSDKZoom','2.1.1'
   s.pod_target_xcconfig = {

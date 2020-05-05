@@ -18,6 +18,12 @@ android {
         }
     }
 
+    buildTypes {    
+        debug {
+            matchingFallbacks = ['release']
+        }
+    }
+
     packagingOptions {
         exclude 'META-INF/*.kotlin_module'
         exclude "**/kotlin/**"
@@ -27,8 +33,6 @@ android {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
-
-
 }
 
 dependencies {
