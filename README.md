@@ -61,6 +61,20 @@ allprojects {
     ...
 }
 ```
+### Debug build configuration
+
+Add this configuration for the debug build type to your `buildTypes` block (`android/app/build.gradle`):
+
+```diff
+buildTypes {
+    debug {
++     matchingFallbacks = ['release']
+      ...
+    }
+    ...
+}
+
+```
 
 Depending on your Android project setup and version of React Native, you
 may encounter the following error during your build process:
