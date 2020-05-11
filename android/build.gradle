@@ -5,16 +5,22 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('compileSdkVersion', 28)
-    buildToolsVersion safeExtGet('buildToolsVersion', '28.0.3')
+    compileSdkVersion safeExtGet('compileSdkVersion', 29)
+    buildToolsVersion safeExtGet('buildToolsVersion', '29.0.3')
 
     defaultConfig {
-        minSdkVersion safeExtGet('minSdkVersion', 16)
-        targetSdkVersion safeExtGet('targetSdkVersion', 28)
-        versionCode 1
-        versionName "1.0.0"
+        minSdkVersion safeExtGet('minSdkVersion', 21)
+        targetSdkVersion safeExtGet('targetSdkVersion', 29)
+        versionCode 110
+        versionName "1.1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
+        }
+    }
+
+    buildTypes {    
+        debug {
+            matchingFallbacks = ['release']
         }
     }
 
@@ -27,15 +33,13 @@ android {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
-
-
 }
 
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
-    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:2.1.0'
-    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:2.1.0'
+    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:2.2.0'
+    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:2.2.0'
 }
 
 allprojects {
