@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion safeExtGet('minSdkVersion', 21)
         targetSdkVersion safeExtGet('targetSdkVersion', 29)
-        versionCode 110
-        versionName "1.1.0"
+        versionCode 120
+        versionName "1.2.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
@@ -38,8 +38,8 @@ android {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
-    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:2.2.0'
-    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:2.2.0'
+    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:2.3.0'
+    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:2.3.0'
 }
 
 allprojects {
