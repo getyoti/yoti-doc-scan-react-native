@@ -14,8 +14,8 @@ Pod::Spec.new do |s|
   s.source_files   = 'ios/**/*.{h,m}'
   s.platform       = :ios, '11.4'
   s.dependency 'React'
-  s.dependency 'YotiSDKDocument','2.2.0'
-  s.dependency 'YotiSDKZoom','2.2.0'
+  s.dependency 'YotiSDKDocument','2.1.1'
+  s.dependency 'YotiSDKZoom','2.1.1'
   s.pod_target_xcconfig = {
     'CLANG_ENABLE_MODULES' => 'NO'
   }
