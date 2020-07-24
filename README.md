@@ -75,6 +75,15 @@ buildTypes {
 }
 
 ```
+If you're using [Firebase Performance Monitoring](https://rnfirebase.io/perf/usage) you'll need to disable it for debug built variant. One way to do this is including this flag in your `gradle.properties` file:
+```
+firebasePerformanceInstrumentationEnabled=false
+
+```
+And update your release build command line to enable it:
+```
+./gradlew assembleRelease -PfirebasePerformanceInstrumentationEnabled=true
+``` 
 
 Depending on your Android project setup and version of React Native, you
 may encounter the following error during your build process:
