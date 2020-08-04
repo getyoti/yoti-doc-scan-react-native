@@ -89,7 +89,7 @@ And update your release build command line to enable it:
 ```
 
 ### Release build configuration
-If you're using *Proguard* or other obfuscation tool, please, add these configuration rules to your proguard-rules.pro file:
+If you're using **Proguard** or other obfuscation tool, add the following configuration rules to your proguard-rules.pro file:
 ```groovy
 -keep class com.yoti.** { *; }
 -keep class com.microblink.** { *; }
