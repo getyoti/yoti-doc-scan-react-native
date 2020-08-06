@@ -34,7 +34,7 @@ If you're using CocoaPods, navigate to your `ios` and update your `Podfile`:
 
 ```diff
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-+  `pod 'react-native-yoti-doc-scan', :path => '../node_modules/react-native-yoti-doc-scan/react-native-yoti-doc-scan.podspec'`
++ `pod 'react-native-yoti-doc-scan', :path => '../node_modules/react-native-yoti-doc-scan/react-native-yoti-doc-scan.podspec'`
 end
 ```
 
@@ -50,13 +50,13 @@ If autolinking fails, refer to the [troubleshooting instructions](#troubleshooti
 
 Add microblink to your repositories in the root build.gradle file (`android/build.gradle`):
 
-```diff
+```groovy
 allprojects {
     repositories {
-+     mavenCentral()
-+     maven { url 'https://maven.microblink.com' }
-+     maven { url "https://jitpack.io" }
-      ...
+        mavenCentral()
+        maven { url 'https://maven.microblink.com' }
+        maven { url "https://jitpack.io" }
+        ...
     }
     ...
 }
@@ -65,16 +65,40 @@ allprojects {
 
 Add this configuration for the debug build type to your `buildTypes` block (`android/app/build.gradle`):
 
-```diff
+```groovy
 buildTypes {
     debug {
-+     matchingFallbacks = ['release']
+        matchingFallbacks = ['release']
       ...
     }
     ...
 }
 
 ```
+If you're using [Firebase Performance Monitoring](https://rnfirebase.io/perf/usage) you'll need to disable it for debug built variant. One way to do this is including this flag in your `gradle.properties` file:
+
+```groovy
+firebasePerformanceInstrumentationEnabled=false
+
+```
+And update your release build command line to enable it:
+
+```groovy
+./gradlew assembleRelease -PfirebasePerformanceInstrumentationEnabled=true
+
+```
+
+### Release build configuration
+If you're using **Proguard** or other obfuscation tool, add the following configuration rules to your proguard-rules.pro file:
+```groovy
+-keep class com.yoti.** { *; }
+-keep class com.microblink.** { *; }
+-keep class com.microblink.**$* { *; }
+-dontwarn com.microblink.**
+-keep class com.facetec.zoom.** { *; }
+-dontwarn javax.annotation.Nullable
+```
+
 
 Depending on your Android project setup and version of React Native, you
 may encounter the following error during your build process:
@@ -83,19 +107,18 @@ may encounter the following error during your build process:
 
 Resolve by adding the following packaging options to your `android` block (`android/app/build.gradle`):
 
-```diff
+```groovy
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     
-+   packagingOptions {
-+     pickFirst 'lib/x86/libc++_shared.so'
-+     pickFirst 'lib/x86_64/libjsc.so'
-+     pickFirst 'lib/arm64-v8a/libjsc.so'
-+     pickFirst 'lib/arm64-v8a/libc++_shared.so'
-+     pickFirst 'lib/x86_64/libc++_shared.so'
-+     pickFirst 'lib/armeabi-v7a/libc++_shared.so'
-+   }
-
+    packagingOptions {
+        pickFirst 'lib/x86/libc++_shared.so'
+        pickFirst 'lib/x86_64/libjsc.so'
+        pickFirst 'lib/arm64-v8a/libjsc.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/x86_64/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+    }
     ...
 
 ```
@@ -170,10 +193,10 @@ Android linking is performed in 3 steps:
 
 Add the following to your settings.gradle file as a new entry before the last line which has `include ':app'`:
 
-```diff
-+   include ':react-native-yoti-doc-scan'
-+   project(':react-native-yoti-doc-scan').projectDir = new
-+   File(rootProject.projectDir, '../node_modules/react-native-yoti-doc-scan/src/android')
+```groovy
+    include ':react-native-yoti-doc-scan'
+    project(':react-native-yoti-doc-scan').projectDir = new
+    File(rootProject.projectDir, '../node_modules/react-native-yoti-doc-scan/src/android')
 
     include ':app'
 ```
@@ -182,17 +205,17 @@ Add the following to your settings.gradle file as a new entry before the last li
 
 Find the `dependencies` block in your build.gradle file and add `implementation project(':react-native-yoti-doc-scan')`:
 
-```diff
+```groovy
 dependencies {
-   ...
-+   implementation project(':react-native-yoti-doc-scan')
+    ...
+    implementation project(':react-native-yoti-doc-scan')
 }
 ```
 
 
 #### android/app/src/main/java/..../MainApplication.java
 
-Add an import for the package:
+Add this import for the package:
 
 ```diff
 import android.app.Application;

@@ -8,3 +8,9 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+-keep class com.yoti.** { *; }
+-keep class com.microblink.** { *; }
+-keep class com.microblink.**$* { *; }
+-dontwarn com.microblink.**
+-keep class com.facetec.zoom.** { *; }
+-dontwarn javax.annotation.Nullable
