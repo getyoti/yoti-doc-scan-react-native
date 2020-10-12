@@ -12,13 +12,13 @@ android {
         minSdkVersion safeExtGet('minSdkVersion', 21)
         targetSdkVersion safeExtGet('targetSdkVersion', 29)
         versionCode 121
-        versionName "1.2.1"
+        versionName "1.3.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
     }
 
-    buildTypes {    
+    buildTypes {
         debug {
             matchingFallbacks = ['release']
         }
