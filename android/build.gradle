@@ -38,8 +38,8 @@ android {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
-    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:2.3.2'
-    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:2.3.2'
+    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:2.4.0'
+    implementation 'com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:2.4.0'
 }
 
 allprojects {
