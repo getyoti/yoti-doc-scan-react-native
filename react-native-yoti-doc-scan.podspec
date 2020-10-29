@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.author                 = package["author"]
   spec.homepage               = "https://github.com/getyoti/yoti-doc-scan-react-native"
   spec.source                 = { :git => "https://github.com/getyoti/yoti-doc-scan-react-native.git", :tag => "#{spec.version}" }
-  spec.source_files           = "ios/**/*.{h,m}""
+  spec.source_files           = "ios/**/*.{h,m}"
   spec.platform               = :ios, "11.0"
   spec.swift_version          = "5.3"
   spec.dependency             "React"
