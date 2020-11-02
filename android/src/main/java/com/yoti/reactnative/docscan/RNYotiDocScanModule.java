@@ -60,7 +60,7 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             mErrorCallback.invoke("E_ACTIVITY_DOES_NOT_EXIST");
             return;
         }
-        boolean success = mYotiSdk.setSessionId(sessionId).setClientSessionToken(clientSessionToken).start(currentActivity);
+        boolean success = mYotiSdk.setSessionId(sessionId).setClientSessionToken(clientSessionToken).configureReactNativeClient().start(currentActivity);
         if (!success) {
             int code = mYotiSdk.getSessionStatusCode();
             String description = mYotiSdk.getSessionStatusDescription();
