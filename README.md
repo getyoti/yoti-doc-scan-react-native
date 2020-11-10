@@ -133,7 +133,7 @@ Import the SDK with:
 import YotiDocScan from '@getyoti/react-native-yoti-doc-scan;
 ```
 
-Call the `startSession` method with your session Id and client session token.
+Call the `startSession` method with your session Id and client session token. 
 The method accepts two callbacks: one invoked on success and the other when the result is a failure.
 
 ```javascript
@@ -151,29 +151,37 @@ The method accepts two callbacks: one invoked on success and the other when the 
     );
   }}
 ```
+Optionally, you can specify Android request code. If not, by default it is set to 9001:
+```javascript
+    YotiDocScan.setRequestCode(8888);
+```
 
 Your callbacks will receive a consistent response with two parameters: `code` (number) and `description` (string).
 The `code` is always populated with one of the values in the results table below.
 The `description` is not guaranteed to always have a value and as such your business logic should not rely on it.
 
-Code | Description | Retry possible (same session)
-:-- | :-- | :--
-1000 | No error occurred. The user cancelled the session | Yes
-2000 | Unauthorised request (wrong or expired session token) | Yes
-2001 | Session not found | Yes
-2002 | Session expired | Yes
-2003 | SDK launched without session Token | Yes
-2004 | SDK launched without session ID | Yes
-3000 | Yoti's services are down or unable to process the request | Yes
-3001 | An error occurred during a network request | Yes
-3002 | User has no network | Yes
-4000 | The user did not grant permission to the camera | Yes
-5000 | The user's camera was not found and file upload is not allowed | No
-5002 | No more local tries for the liveness flow | Yes
-5003 | SDK is out-of-date, please update the SDK to the latest version | No
-5004 | An unexpected internal error occurred | No
-5005 | An unexpected document capture error occurred | No
-5006 | An unexpected liveness capture error occurred | No
+
+| Code              | Message                      | Retry possible for the same session                    |
+| ----------------- | ---------------------------- | ---------------------------------- |
+| 0                 | Result with success          | No                                 |
+| 1000              | No error occurred - the end-user cancelled the session for an unknown reason           | Yes |
+| 2000              | Unauthorised request (wrong or expired session token)           | Yes |
+| 2001              | Session not found           | Yes |
+| 2003              | SDK launched without session Token           | Yes |
+| 2004              | SDK launched without session ID           | Yes |
+| 3000              | Yoti's services are down or unable to process the request           | Yes |
+| 3001              | An error occurred during a network request          | Yes |
+| 3002              | User has no network          | Yes |
+| 4000              | The user did not grant permissions to the camera          | Yes |
+| 5000              | No camera (when user's camera was not found and file upload is not allowed)          | No |
+| 5002              | No more local tries for the liveness flow          | Yes |
+| 5003              | SDK is out-of-date - please update the SDK to the latest version          | No |
+| 5004              | Unexpected internal error          | No |
+| 5005              | Unexpected document scanning error          | No |
+| 5006              | Unexpected liveness error          | No |
+| 6000              | Document Capture dependency not found error          | No |
+| 6001              | Liveness Zoom dependency not found error          | No |
+| 6002              | Supplementary document dependency not found error          | No |
 
 ## Troubleshooting
 

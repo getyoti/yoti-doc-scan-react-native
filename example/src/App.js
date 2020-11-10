@@ -148,6 +148,7 @@ export default () => {
                       setCode(code)
                       setDescription(description)
                     }
+                    YotiDocScan.setRequestCode(9999); // Optional: Android request Code customisation
                     YotiDocScan.startSession(sessionId, clientSessionToken, onSuccess, onError);
                   }}
                   title="START SESSION"
