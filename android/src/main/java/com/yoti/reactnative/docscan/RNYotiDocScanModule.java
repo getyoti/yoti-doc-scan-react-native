@@ -44,7 +44,7 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     RNYotiDocScanModule(ReactApplicationContext reactContext) {
         super(reactContext);
         reactContext.addActivityEventListener((mActivityEventListener));
-        mYotiSdk = new YotiSdk(reactContext);
+        mYotiSdk = new YotiSdk(reactContext).configureReactNativeClient();
     }
 
     @Override
