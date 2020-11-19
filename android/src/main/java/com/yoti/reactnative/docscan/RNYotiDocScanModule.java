@@ -20,11 +20,12 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     private YotiSdk mYotiSdk;
     private Callback mErrorCallback;
     private Callback mSuccessCallback;
+    private int mRequestCode = YOTI_SDK_REQUEST_CODE;
 
     private final ActivityEventListener mActivityEventListener = new BaseActivityEventListener() {
         @Override
         public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
-            if (requestCode != YOTI_SDK_REQUEST_CODE) {
+            if (requestCode != mRequestCode) {
                 return;
             }
 
@@ -43,12 +44,17 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     RNYotiDocScanModule(ReactApplicationContext reactContext) {
         super(reactContext);
         reactContext.addActivityEventListener((mActivityEventListener));
-        mYotiSdk = new YotiSdk(reactContext);
+        mYotiSdk = new YotiSdk(reactContext).configureReactNativeClient();
     }
 
     @Override
     public String getName() {
         return "RNYotiDocScan";
+    }
+
+    @ReactMethod
+    public void setRequestCode(int requestCode) {
+        mRequestCode = requestCode;
     }
 
     @ReactMethod
@@ -60,7 +66,7 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             mErrorCallback.invoke("E_ACTIVITY_DOES_NOT_EXIST");
             return;
         }
-        boolean success = mYotiSdk.setSessionId(sessionId).setClientSessionToken(clientSessionToken).start(currentActivity);
+        boolean success = mYotiSdk.setSessionId(sessionId).setClientSessionToken(clientSessionToken).start(currentActivity, mRequestCode);
         if (!success) {
             int code = mYotiSdk.getSessionStatusCode();
             String description = mYotiSdk.getSessionStatusDescription();
