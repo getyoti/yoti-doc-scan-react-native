@@ -5,6 +5,7 @@
 #import "YotiSDKCore-Swift.h"
 #import "YotiSDKDocument-Swift.h"
 #import "YotiSDKZoom-Swift.h"
+#import "YotiSDKNetwork-Swift.h"
 
 NSInteger const kYotiSuccessStatusCode = 0;
 
@@ -14,6 +15,7 @@ NSInteger const kYotiSuccessStatusCode = 0;
 @property (nonatomic, strong) UIViewController *rootViewController;
 @property (nonatomic, strong) NSString *sessionID;
 @property (nonatomic, strong) NSString *sessionToken;
+@property (nonatomic, assign) ServerLocation serverLocation;
 @property (nonatomic, strong) RCTResponseSenderBlock errorCallback;
 @property (nonatomic, strong) RCTResponseSenderBlock successCallback;
 @end
@@ -25,6 +27,10 @@ RCT_EXPORT_MODULE(RNYotiDocScan);
 RCT_EXPORT_METHOD(setRequestCode:(NSNumber * _Nonnull)requestCode) {
     // Nothing to do here: just to maintain compatibility with Android
     // Both OS need to export same methods (check App.js call to startSession)
+}
+
+RCT_EXPORT_METHOD(useCanadaService) {
+    self.serverLocation = ServerLocationCanada;
 }
 
 RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSString *)clientSessionToken successCallback:(RCTResponseSenderBlock)successCallback errorCallback:(RCTResponseSenderBlock)errorCallback)
@@ -40,7 +46,15 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
         self.rootViewController = RCTPresentedViewController();
         [self.rootViewController presentViewController:self.yotiSDKNavigationController animated:YES completion:nil];
     });
-    
+}
+
+// MARK: Init
+
+-(id)init {
+     if (self = [super init])  {
+        self.serverLocation = ServerLocationUnitedKingdom;
+     }
+     return self;
 }
 
 // MARK: - Data source delegate
@@ -56,6 +70,10 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
 - (NSString * _Nonnull)sessionTokenFor:(YotiSDKNavigationController * _Nonnull)navigationController {
     return self.sessionToken;
 }
+
+- (ServerLocation)serverLocationFor:(YotiSDKNavigationController * _Nonnull)navigationController {
+    return self.serverLocation;    
+ }
 
 - (UIColor * _Nonnull)primaryColorFor:(YotiSDKNavigationController * _Nonnull)navigationController {
     return [UIColor colorWithRed:34.0/255.0 green:157.0/255.0 blue:255.0/255.0 alpha:1.0];

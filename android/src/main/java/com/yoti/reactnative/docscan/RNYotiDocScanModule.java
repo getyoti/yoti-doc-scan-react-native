@@ -53,6 +53,11 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void useCanadaService() {
+        mYotiSdk.useCanadaService();
+    }
+
+    @ReactMethod
     public void setRequestCode(int requestCode) {
         mRequestCode = requestCode;
     }
@@ -66,6 +71,7 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             mErrorCallback.invoke("E_ACTIVITY_DOES_NOT_EXIST");
             return;
         }
+
         boolean success = mYotiSdk.setSessionId(sessionId).setClientSessionToken(clientSessionToken).start(currentActivity, mRequestCode);
         if (!success) {
             int code = mYotiSdk.getSessionStatusCode();
