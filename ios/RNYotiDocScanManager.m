@@ -15,7 +15,7 @@ NSInteger const kYotiSuccessStatusCode = 0;
 @property (nonatomic, strong) UIViewController *rootViewController;
 @property (nonatomic, strong) NSString *sessionID;
 @property (nonatomic, strong) NSString *sessionToken;
-@property (nonatomic, assign) ServerLocation serverLocation;
+@property (nonatomic, assign) BOOL setUpCanadaServerLocation;
 @property (nonatomic, strong) RCTResponseSenderBlock errorCallback;
 @property (nonatomic, strong) RCTResponseSenderBlock successCallback;
 @end
@@ -30,7 +30,7 @@ RCT_EXPORT_METHOD(setRequestCode:(NSNumber * _Nonnull)requestCode) {
 }
 
 RCT_EXPORT_METHOD(useCanadaService) {
-    self.serverLocation = ServerLocationCanada;
+    self.setUpCanadaServerLocation = YES;
 }
 
 RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSString *)clientSessionToken successCallback:(RCTResponseSenderBlock)successCallback errorCallback:(RCTResponseSenderBlock)errorCallback)
@@ -48,15 +48,6 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
     });
 }
 
-// MARK: Init
-
--(id)init {
-     if (self = [super init])  {
-        self.serverLocation = ServerLocationUnitedKingdom;
-     }
-     return self;
-}
-
 // MARK: - Data source delegate
 
 - (NSArray<Class<YotiSDKModule>> * _Nonnull)supportedModuleTypesFor:(YotiSDKNavigationController * _Nonnull)navigationController {
@@ -72,7 +63,11 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
 }
 
 - (ServerLocation)serverLocationFor:(YotiSDKNavigationController * _Nonnull)navigationController {
-    return self.serverLocation;    
+    if (self.setUpCanadaServerLocation) {
+        return ServerLocationCanada;
+    } else {
+        return ServerLocationUnitedKingdom;    
+    }
  }
 
 - (UIColor * _Nonnull)primaryColorFor:(YotiSDKNavigationController * _Nonnull)navigationController {
