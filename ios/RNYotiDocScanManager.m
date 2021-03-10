@@ -66,15 +66,19 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
     if (self.setUpCanadaServerLocation) {
         return ServerLocationCanada;
     } else {
-        return ServerLocationUnitedKingdom;    
+        return ServerLocationUnitedKingdom;
     }
- }
+}
+
+- (BOOL)isReactNativeClient:(YotiSDKNavigationController * _Nonnull)navigationController {
+    return true;
+}
+
+// MARK: - SDK Delegate
 
 - (UIColor * _Nonnull)primaryColorFor:(YotiSDKNavigationController * _Nonnull)navigationController {
     return [UIColor colorWithRed:34.0/255.0 green:157.0/255.0 blue:255.0/255.0 alpha:1.0];
 }
-
-// MARK: - SDK Delegate
 
 - (void)navigationController:(YotiSDKNavigationController * _Nonnull)navigationController didFinishWithStatusCode:(NSInteger)statusCode {
     [self.rootViewController dismissViewControllerAnimated:YES completion:nil];
