@@ -71,7 +71,7 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
 }
 
 - (BOOL)isReactNativeClient:(YotiSDKNavigationController * _Nonnull)navigationController {
-    return true;
+    return YES;
 }
 
 // MARK: - SDK Delegate
