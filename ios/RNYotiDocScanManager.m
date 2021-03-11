@@ -1,11 +1,11 @@
 #import "RNYotiDocScanManager.h"
 #import <React/RCTUtils.h>
 #import "ZoomPublicApi.h"
+#import "YotiSDKNetwork-Swift.h"
 #import "YotiSDKCommon-Swift.h"
 #import "YotiSDKCore-Swift.h"
 #import "YotiSDKDocument-Swift.h"
 #import "YotiSDKZoom-Swift.h"
-#import "YotiSDKNetwork-Swift.h"
 
 NSInteger const kYotiSuccessStatusCode = 0;
 
