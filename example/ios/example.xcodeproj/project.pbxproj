@@ -31,13 +31,13 @@
 		762F63D54D884C14AA0F913D /* Prompt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD70FF52FF7C4A4F9290868E /* Prompt-SemiBold.ttf */; };
 		8A5CECC96C8D4D718CEB3E69 /* Prompt-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6A83E5A279149258670767C /* Prompt-ExtraBoldItalic.ttf */; };
 		901F50404004416FAB62ACA6 /* Prompt-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DED3801F83174BA3941B170F /* Prompt-LightItalic.ttf */; };
-		B4554193048FB5BECB07DB7A /* Pods_exampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A826A54431B122171670FB8 /* Pods_exampleTests.framework */; };
 		C21566B60B2647E7B0A8BDA2 /* Prompt-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1333EC5FDB7C4869B8D59F5B /* Prompt-BlackItalic.ttf */; };
 		CB2EB82EAEE74A10951776C5 /* Prompt-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D57C4BC9BDD4D619A46BF28 /* Prompt-Medium.ttf */; };
 		D2B24E3DCF41482584B61E60 /* libPods-example-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84150536C8819EEA85CF1B06 /* libPods-example-tvOS.a */; };
 		D66EE7D98D7203E4B8E5BA9C /* libPods-example-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1031A75A04EBB1139430EF /* libPods-example-tvOSTests.a */; };
 		E7148468C6714F8198C53351 /* Prompt-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE4BC8D81DB847B28358C419 /* Prompt-ExtraBold.ttf */; };
 		EF5E9756AE4A428C8C3513A6 /* Prompt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93C8547D475E49B8B013B2DD /* Prompt-Regular.ttf */; };
+		FB24EC4A6853278CD8716028 /* Pods_example_exampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6353891CC7B0DE62672114 /* Pods_example_exampleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,6 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = example/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = example/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = example/main.m; sourceTree = "<group>"; };
-		1A826A54431B122171670FB8 /* Pods_exampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_exampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		209E7D392534928400C38A2A /* example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = example.entitlements; path = example/example.entitlements; sourceTree = "<group>"; };
 		2254035223E7244900911E11 /* example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example-Bridging-Header.h"; sourceTree = "<group>"; };
 		27948A403BBE366CC63BF700 /* Pods-example-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-tvOS.release.xcconfig"; path = "Target Support Files/Pods-example-tvOS/Pods-example-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		2D02E4901E0B4A5D006451C7 /* example-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "example-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		369FA13E79393BBE29A51BFE /* Pods-exampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exampleTests.release.xcconfig"; path = "Target Support Files/Pods-exampleTests/Pods-exampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		433780FA1C544E1D99B03F3D /* Prompt-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-BoldItalic.ttf"; path = "../assets/fonts/Prompt/Prompt-BoldItalic.ttf"; sourceTree = "<group>"; };
+		4695CC991D31D0DDC196FF6A /* Pods-example-exampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-exampleTests.release.xcconfig"; path = "Target Support Files/Pods-example-exampleTests/Pods-example-exampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		4BD352EA484343BF8E4873D9 /* Prompt-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-Bold.ttf"; path = "../assets/fonts/Prompt/Prompt-Bold.ttf"; sourceTree = "<group>"; };
 		4C1031A75A04EBB1139430EF /* libPods-example-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-example-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5628FD3572B947FAAE87D4D5 /* Prompt-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-ExtraLightItalic.ttf"; path = "../assets/fonts/Prompt/Prompt-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
@@ -86,6 +86,7 @@
 		6D5982063FF0EB02F0E1409B /* Pods-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.debug.xcconfig"; path = "Target Support Files/Pods-example/Pods-example.debug.xcconfig"; sourceTree = "<group>"; };
 		84150536C8819EEA85CF1B06 /* libPods-example-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-example-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DD7943AF3542F58CD52E06 /* Prompt-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-Light.ttf"; path = "../assets/fonts/Prompt/Prompt-Light.ttf"; sourceTree = "<group>"; };
+		8A6353891CC7B0DE62672114 /* Pods_example_exampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_example_exampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C8547D475E49B8B013B2DD /* Prompt-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-Regular.ttf"; path = "../assets/fonts/Prompt/Prompt-Regular.ttf"; sourceTree = "<group>"; };
 		9D57C4BC9BDD4D619A46BF28 /* Prompt-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-Medium.ttf"; path = "../assets/fonts/Prompt/Prompt-Medium.ttf"; sourceTree = "<group>"; };
 		B8796A505E2D06645176A6D5 /* Pods-example-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-example-tvOSTests/Pods-example-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		C90E08A8C37C411398BC2CA4 /* Prompt-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-SemiBoldItalic.ttf"; path = "../assets/fonts/Prompt/Prompt-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		CFED05AAEC69613B475DFEC1 /* Pods-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.release.xcconfig"; path = "Target Support Files/Pods-example/Pods-example.release.xcconfig"; sourceTree = "<group>"; };
 		D41599CC146D4CFF84357C55 /* Prompt-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-Black.ttf"; path = "../assets/fonts/Prompt/Prompt-Black.ttf"; sourceTree = "<group>"; };
+		DAADB517E919751D8FEC785A /* Pods-example-exampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-exampleTests.debug.xcconfig"; path = "Target Support Files/Pods-example-exampleTests/Pods-example-exampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD70FF52FF7C4A4F9290868E /* Prompt-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-SemiBold.ttf"; path = "../assets/fonts/Prompt/Prompt-SemiBold.ttf"; sourceTree = "<group>"; };
 		DE4BC8D81DB847B28358C419 /* Prompt-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-ExtraBold.ttf"; path = "../assets/fonts/Prompt/Prompt-ExtraBold.ttf"; sourceTree = "<group>"; };
 		DED3801F83174BA3941B170F /* Prompt-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-LightItalic.ttf"; path = "../assets/fonts/Prompt/Prompt-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -112,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4554193048FB5BECB07DB7A /* Pods_exampleTests.framework in Frameworks */,
+				FB24EC4A6853278CD8716028 /* Pods_example_exampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +185,7 @@
 				84150536C8819EEA85CF1B06 /* libPods-example-tvOS.a */,
 				4C1031A75A04EBB1139430EF /* libPods-example-tvOSTests.a */,
 				E92C4CB33971BEAF338A5175 /* Pods_example.framework */,
-				1A826A54431B122171670FB8 /* Pods_exampleTests.framework */,
+				8A6353891CC7B0DE62672114 /* Pods_example_exampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,6 +236,8 @@
 				B8796A505E2D06645176A6D5 /* Pods-example-tvOSTests.release.xcconfig */,
 				E272ECAC45B8E49AB87233F5 /* Pods-exampleTests.debug.xcconfig */,
 				369FA13E79393BBE29A51BFE /* Pods-exampleTests.release.xcconfig */,
+				DAADB517E919751D8FEC785A /* Pods-example-exampleTests.debug.xcconfig */,
+				4695CC991D31D0DDC196FF6A /* Pods-example-exampleTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -274,6 +278,7 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				629D7477CDE3311E3A3CECAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,7 +301,6 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				C8667E4074240076EBCCDB43 /* [CP] Embed Pods Frameworks */,
-				FF86BF18A1F8949B232E82F9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -523,6 +527,94 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		629D7477CDE3311E3A3CECAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-example-exampleTests/Pods-example-exampleTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
+				"${BUILT_PRODUCTS_DIR}/FBReactNativeSpec/FBReactNativeSpec.framework",
+				"${BUILT_PRODUCTS_DIR}/Folly/folly.framework",
+				"${PODS_ROOT}/PPBlinkID/Microblink.framework",
+				"${BUILT_PRODUCTS_DIR}/RCTTypeSafety/RCTTypeSafety.framework",
+				"${BUILT_PRODUCTS_DIR}/React-Core/React.framework",
+				"${BUILT_PRODUCTS_DIR}/React-CoreModules/CoreModules.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTAnimation/RCTAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTBlob/RCTBlob.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTImage/RCTImage.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTLinking/RCTLinking.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTNetwork/RCTNetwork.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTSettings/RCTSettings.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTText/RCTText.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTVibration/RCTVibration.framework",
+				"${BUILT_PRODUCTS_DIR}/React-cxxreact/cxxreact.framework",
+				"${BUILT_PRODUCTS_DIR}/React-jsi/jsi.framework",
+				"${BUILT_PRODUCTS_DIR}/React-jsiexecutor/jsireact.framework",
+				"${BUILT_PRODUCTS_DIR}/React-jsinspector/jsinspector.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactCommon/ReactCommon.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
+				"${PODS_ROOT}/YotiCommon/YotiCommon/YotiCommon.framework",
+				"${PODS_ROOT}/YotiDocumentCapture/YotiDocumentCapture/YotiDocumentCapture.framework",
+				"${PODS_ROOT}/YotiFoundation/YotiFoundation/YotiFoundation.framework",
+				"${PODS_ROOT}/YotiNetwork/YotiNetwork/YotiNetwork.framework",
+				"${PODS_ROOT}/YotiSDKCommon/YotiSDKCommon/YotiSDKCommon.framework",
+				"${PODS_ROOT}/YotiSDKCore/YotiSDKCore/YotiSDKCore.framework",
+				"${PODS_ROOT}/YotiSDKDesign/YotiSDKDesign/YotiSDKDesign.framework",
+				"${PODS_ROOT}/YotiSDKDocument/YotiSDKDocument/YotiSDKDocument.framework",
+				"${PODS_ROOT}/YotiSDKDocument/YotiSDKDocument/mrtddump.framework",
+				"${PODS_ROOT}/YotiSDKNetwork/YotiSDKNetwork/YotiSDKNetwork.framework",
+				"${PODS_ROOT}/YotiSDKZoom/YotiSDKZoom/YotiSDKZoom.framework",
+				"${PODS_ROOT}/YotiSDKZoom/YotiSDKZoom/ZoomAuthentication.framework",
+				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
+				"${BUILT_PRODUCTS_DIR}/react-native-yoti-doc-scan/react_native_yoti_doc_scan.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoubleConversion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBReactNativeSpec.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/folly.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Microblink.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTTypeSafety.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreModules.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTBlob.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTLinking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTSettings.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTVibration.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/cxxreact.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsireact.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsinspector.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactCommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiCommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiDocumentCapture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKCommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKDesign.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKDocument.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mrtddump.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKZoom.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZoomAuthentication.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/react_native_yoti_doc_scan.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-example-exampleTests/Pods-example-exampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6610BA09C754B68AB7A43B5E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -538,7 +630,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-exampleTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-example-exampleTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -559,7 +651,6 @@
 				"${BUILT_PRODUCTS_DIR}/RCTTypeSafety/RCTTypeSafety.framework",
 				"${BUILT_PRODUCTS_DIR}/React-Core/React.framework",
 				"${BUILT_PRODUCTS_DIR}/React-CoreModules/CoreModules.framework",
-				"${BUILT_PRODUCTS_DIR}/React-RCTActionSheet/RCTActionSheet.framework",
 				"${BUILT_PRODUCTS_DIR}/React-RCTAnimation/RCTAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/React-RCTBlob/RCTBlob.framework",
 				"${BUILT_PRODUCTS_DIR}/React-RCTImage/RCTImage.framework",
@@ -576,26 +667,16 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
 				"${PODS_ROOT}/YotiCommon/YotiCommon/YotiCommon.framework",
-				"${PODS_ROOT}/YotiCommon/YotiCommon/YotiCommon.framework.dSYM",
 				"${PODS_ROOT}/YotiDocumentCapture/YotiDocumentCapture/YotiDocumentCapture.framework",
-				"${PODS_ROOT}/YotiDocumentCapture/YotiDocumentCapture/YotiDocumentCapture.framework.dSYM",
 				"${PODS_ROOT}/YotiFoundation/YotiFoundation/YotiFoundation.framework",
-				"${PODS_ROOT}/YotiFoundation/YotiFoundation/YotiFoundation.framework.dSYM",
 				"${PODS_ROOT}/YotiNetwork/YotiNetwork/YotiNetwork.framework",
-				"${PODS_ROOT}/YotiNetwork/YotiNetwork/YotiNetwork.framework.dSYM",
 				"${PODS_ROOT}/YotiSDKCommon/YotiSDKCommon/YotiSDKCommon.framework",
-				"${PODS_ROOT}/YotiSDKCommon/YotiSDKCommon/YotiSDKCommon.framework.dSYM",
 				"${PODS_ROOT}/YotiSDKCore/YotiSDKCore/YotiSDKCore.framework",
-				"${PODS_ROOT}/YotiSDKCore/YotiSDKCore/YotiSDKCore.framework.dSYM",
 				"${PODS_ROOT}/YotiSDKDesign/YotiSDKDesign/YotiSDKDesign.framework",
-				"${PODS_ROOT}/YotiSDKDesign/YotiSDKDesign/YotiSDKDesign.framework.dSYM",
 				"${PODS_ROOT}/YotiSDKDocument/YotiSDKDocument/YotiSDKDocument.framework",
-				"${PODS_ROOT}/YotiSDKDocument/YotiSDKDocument/YotiSDKDocument.framework.dSYM",
 				"${PODS_ROOT}/YotiSDKDocument/YotiSDKDocument/mrtddump.framework",
 				"${PODS_ROOT}/YotiSDKNetwork/YotiSDKNetwork/YotiSDKNetwork.framework",
-				"${PODS_ROOT}/YotiSDKNetwork/YotiSDKNetwork/YotiSDKNetwork.framework.dSYM",
 				"${PODS_ROOT}/YotiSDKZoom/YotiSDKZoom/YotiSDKZoom.framework",
-				"${PODS_ROOT}/YotiSDKZoom/YotiSDKZoom/YotiSDKZoom.framework.dSYM",
 				"${PODS_ROOT}/YotiSDKZoom/YotiSDKZoom/ZoomAuthentication.framework",
 				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
 				"${BUILT_PRODUCTS_DIR}/react-native-yoti-doc-scan/react_native_yoti_doc_scan.framework",
@@ -609,7 +690,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTTypeSafety.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreModules.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTActionSheet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTBlob.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTImage.framework",
@@ -626,26 +706,16 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiCommon.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/YotiCommon.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiDocumentCapture.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/YotiDocumentCapture.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiFoundation.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/YotiFoundation.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiNetwork.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/YotiNetwork.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKCommon.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/YotiSDKCommon.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKCore.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/YotiSDKCore.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKDesign.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/YotiSDKDesign.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKDocument.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/YotiSDKDocument.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mrtddump.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKNetwork.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/YotiSDKNetwork.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKZoom.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/YotiSDKZoom.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZoomAuthentication.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/react_native_yoti_doc_scan.framework",
@@ -715,24 +785,6 @@
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FF86BF18A1F8949B232E82F9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-example/Pods-example-resources.sh",
-				"${PODS_ROOT}/PPBlinkID/Microblink.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Microblink.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-example/Pods-example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -800,7 +852,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E272ECAC45B8E49AB87233F5 /* Pods-exampleTests.debug.xcconfig */;
+			baseConfigurationReference = DAADB517E919751D8FEC785A /* Pods-example-exampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 6VUTP72GG4;
@@ -824,7 +876,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 369FA13E79393BBE29A51BFE /* Pods-exampleTests.release.xcconfig */;
+			baseConfigurationReference = 4695CC991D31D0DDC196FF6A /* Pods-example-exampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -858,7 +910,7 @@
 				INFOPLIST_FILE = example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.6.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -888,7 +940,7 @@
 				INFOPLIST_FILE = example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.6.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
