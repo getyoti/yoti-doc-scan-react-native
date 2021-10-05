@@ -25,15 +25,12 @@
 		46D518ED37384084ABBB6692 /* Prompt-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C90E08A8C37C411398BC2CA4 /* Prompt-SemiBoldItalic.ttf */; };
 		47AB59B8752A40BD80B8832F /* Prompt-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6030067BAEF446E3B66386BD /* Prompt-ExtraLight.ttf */; };
 		4D51779199E54BD1A6C1A7FE /* Prompt-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 433780FA1C544E1D99B03F3D /* Prompt-BoldItalic.ttf */; };
-		4ED79558C40C13A1522980A7 /* libPods-example-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E031FE54BB85065C88DE3B8 /* libPods-example-tvOSTests.a */; };
 		4FF163751D1A4211A921428C /* Prompt-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D41599CC146D4CFF84357C55 /* Prompt-Black.ttf */; };
 		5AC022418D6242E4BF2B7F27 /* Prompt-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5628FD3572B947FAAE87D4D5 /* Prompt-ExtraLightItalic.ttf */; };
 		70E902C4165C4B5FA5A76C80 /* Prompt-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8EA822BE04E46D39FCC4B08 /* Prompt-ThinItalic.ttf */; };
 		762F63D54D884C14AA0F913D /* Prompt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD70FF52FF7C4A4F9290868E /* Prompt-SemiBold.ttf */; };
-		82247B93458093BDA00AE887 /* Pods_example_exampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093EDBF2E755A9225637220 /* Pods_example_exampleTests.framework */; };
 		8A5CECC96C8D4D718CEB3E69 /* Prompt-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6A83E5A279149258670767C /* Prompt-ExtraBoldItalic.ttf */; };
 		901F50404004416FAB62ACA6 /* Prompt-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DED3801F83174BA3941B170F /* Prompt-LightItalic.ttf */; };
-		9C428E3BA32145495B66AE00 /* libPods-example-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC1FBD9D797439A8DCF4ED /* libPods-example-tvOS.a */; };
 		C21566B60B2647E7B0A8BDA2 /* Prompt-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1333EC5FDB7C4869B8D59F5B /* Prompt-BlackItalic.ttf */; };
 		CB2EB82EAEE74A10951776C5 /* Prompt-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D57C4BC9BDD4D619A46BF28 /* Prompt-Medium.ttf */; };
 		E7148468C6714F8198C53351 /* Prompt-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE4BC8D81DB847B28358C419 /* Prompt-ExtraBold.ttf */; };
@@ -77,7 +74,6 @@
 		433780FA1C544E1D99B03F3D /* Prompt-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-BoldItalic.ttf"; path = "../assets/fonts/Prompt/Prompt-BoldItalic.ttf"; sourceTree = "<group>"; };
 		4695CC991D31D0DDC196FF6A /* Pods-example-exampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-exampleTests.release.xcconfig"; path = "Target Support Files/Pods-example-exampleTests/Pods-example-exampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		4BD352EA484343BF8E4873D9 /* Prompt-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-Bold.ttf"; path = "../assets/fonts/Prompt/Prompt-Bold.ttf"; sourceTree = "<group>"; };
-		4E031FE54BB85065C88DE3B8 /* libPods-example-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-example-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5628FD3572B947FAAE87D4D5 /* Prompt-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-ExtraLightItalic.ttf"; path = "../assets/fonts/Prompt/Prompt-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		6030067BAEF446E3B66386BD /* Prompt-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-ExtraLight.ttf"; path = "../assets/fonts/Prompt/Prompt-ExtraLight.ttf"; sourceTree = "<group>"; };
 		63AB00CD5ED746D195EF8D9F /* Prompt-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-MediumItalic.ttf"; path = "../assets/fonts/Prompt/Prompt-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -87,7 +83,6 @@
 		9D57C4BC9BDD4D619A46BF28 /* Prompt-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-Medium.ttf"; path = "../assets/fonts/Prompt/Prompt-Medium.ttf"; sourceTree = "<group>"; };
 		B8796A505E2D06645176A6D5 /* Pods-example-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-example-tvOSTests/Pods-example-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		B8EA822BE04E46D39FCC4B08 /* Prompt-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-ThinItalic.ttf"; path = "../assets/fonts/Prompt/Prompt-ThinItalic.ttf"; sourceTree = "<group>"; };
-		BADC1FBD9D797439A8DCF4ED /* libPods-example-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-example-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB0EF85B5BE411B8DD98F9F /* Prompt-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-Thin.ttf"; path = "../assets/fonts/Prompt/Prompt-Thin.ttf"; sourceTree = "<group>"; };
 		C3CB39EC6F88C387C297CA50 /* Pods-example-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-example-tvOS/Pods-example-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C90E08A8C37C411398BC2CA4 /* Prompt-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-SemiBoldItalic.ttf"; path = "../assets/fonts/Prompt/Prompt-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -101,7 +96,6 @@
 		E92C4CB33971BEAF338A5175 /* Pods_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED5BC1DCF6844DBBB4138CE9 /* Prompt-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-Italic.ttf"; path = "../assets/fonts/Prompt/Prompt-Italic.ttf"; sourceTree = "<group>"; };
-		F093EDBF2E755A9225637220 /* Pods_example_exampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_example_exampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A83E5A279149258670767C /* Prompt-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Prompt-ExtraBoldItalic.ttf"; path = "../assets/fonts/Prompt/Prompt-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82247B93458093BDA00AE887 /* Pods_example_exampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C428E3BA32145495B66AE00 /* libPods-example-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ED79558C40C13A1522980A7 /* libPods-example-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,9 +168,6 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				E92C4CB33971BEAF338A5175 /* Pods_example.framework */,
-				F093EDBF2E755A9225637220 /* Pods_example_exampleTests.framework */,
-				BADC1FBD9D797439A8DCF4ED /* libPods-example-tvOS.a */,
-				4E031FE54BB85065C88DE3B8 /* libPods-example-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
