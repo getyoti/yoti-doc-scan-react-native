@@ -5,7 +5,7 @@
 #import <YotiSDKCommon/YotiSDKCommon-Swift.h>
 #import <YotiSDKCore/YotiSDKCore-Swift.h>
 #import <YotiSDKDocument/YotiSDKDocument-Swift.h>
-#import <YotiSDKZoom/YotiSDKZoom-Swift.h>
+#import <YotiSDKFaceTec/YotiSDKFaceTec-Swift.h>
 
 NSInteger const kYotiSuccessStatusCode = 0;
 
@@ -51,7 +51,7 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
 // MARK: - Data source delegate
 
 - (NSArray<Class<YotiSDKModule>> * _Nonnull)supportedModuleTypesFor:(YotiSDKNavigationController * _Nonnull)navigationController {
-    return @[[YotiSDKDocument class], [YotiSDKZoom class]];
+    return @[[YotiSDKDocument class], [YotiSDKFaceTec class]];
 }
 
 - (NSString * _Nonnull)sessionIDFor:(YotiSDKNavigationController * _Nonnull)navigationController {
