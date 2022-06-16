@@ -18,7 +18,7 @@
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
         "react-hot-loader": "^4.12.20",
-        "react-native": "^0.63.4"
+        "react-native": "^0.68.2"
     },
     "dependencies": {
         "keymirror": "^0.1.1",
