@@ -149,12 +149,13 @@ YotiDocScan.startSession(
 );
 ```
 
-In addition, you can choose to also specify an Android request code, or set the primary color used in the SDK using an RGB value. E.g.:
+In addition, you can choose to also specify an Android request code, or set the primary color of the iOS SDK using an RGB value. E.g.:
 ```javascript
 YotiDocScan.setRequestCode(8888); // default: 9001
 YotiDocScan.setPrimaryColorRGB(0, 0, 0); // default: (34, 157, 255)
 ```
 
+To customize the colors of the Android SDK, please refer to its documentation [here](https://github.com/getyoti/yoti-doc-scan-android#colours).
 
 Your callbacks will receive a consistent response with two parameters: `code` (number) and `description` (string).
 The `code` is always populated with one of the values in the results table below.
