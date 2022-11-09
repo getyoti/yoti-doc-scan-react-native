@@ -34,8 +34,7 @@ RCT_EXPORT_METHOD(setPrimaryColorRGB:(double)red green:(double)green blue:(doubl
 }
 
 RCT_EXPORT_METHOD(setRequestCode:(NSNumber * _Nonnull)requestCode) {
-    // Nothing to do here: just to maintain compatibility with Android
-    // Both OS need to export same methods (check App.js call to startSession)
+    // Required to maintain cross-platform API compatibility.
 }
 
 RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSString *)clientSessionToken successCallback:(RCTResponseSenderBlock)successCallback errorCallback:(RCTResponseSenderBlock)errorCallback)
