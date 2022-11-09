@@ -16,6 +16,7 @@ NSInteger const kYotiSuccessStatusCode = 0;
 @property (nonatomic, strong) NSString *sessionID;
 @property (nonatomic, strong) NSString *sessionToken;
 @property (nonatomic, assign) BOOL setUpCanadaServerLocation;
+@property (nonatomic, strong) UIColor *primaryColor;
 @property (nonatomic, strong) RCTResponseSenderBlock errorCallback;
 @property (nonatomic, strong) RCTResponseSenderBlock successCallback;
 @end
@@ -24,13 +25,17 @@ NSInteger const kYotiSuccessStatusCode = 0;
 
 RCT_EXPORT_MODULE(RNYotiDocScan);
 
+RCT_EXPORT_METHOD(useCanadaService) {
+    self.setUpCanadaServerLocation = YES;
+}
+
+RCT_EXPORT_METHOD(setPrimaryColorRGB:(double)red green:(double)green blue:(double)blue) {
+    self.primaryColor = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
+}
+
 RCT_EXPORT_METHOD(setRequestCode:(NSNumber * _Nonnull)requestCode) {
     // Nothing to do here: just to maintain compatibility with Android
     // Both OS need to export same methods (check App.js call to startSession)
-}
-
-RCT_EXPORT_METHOD(useCanadaService) {
-    self.setUpCanadaServerLocation = YES;
 }
 
 RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSString *)clientSessionToken successCallback:(RCTResponseSenderBlock)successCallback errorCallback:(RCTResponseSenderBlock)errorCallback)
@@ -77,7 +82,11 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
 // MARK: - SDK Delegate
 
 - (UIColor * _Nonnull)primaryColorFor:(YotiSDKNavigationController * _Nonnull)navigationController {
-    return [UIColor colorWithRed:34.0/255.0 green:157.0/255.0 blue:255.0/255.0 alpha:1.0];
+    if (self.primaryColor != nil) {
+        return self.primaryColor;
+    } else {
+        return [UIColor colorWithRed:34.0/255.0 green:157.0/255.0 blue:255.0/255.0 alpha:1.0];
+    }
 }
 
 - (void)navigationController:(YotiSDKNavigationController * _Nonnull)navigationController didFinishWithStatusCode:(NSInteger)statusCode {
