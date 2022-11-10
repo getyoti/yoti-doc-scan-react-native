@@ -128,33 +128,34 @@ android {
 The SDK exposes a single method, `startSession()`, which handles communication between your app and the Yoti app on a user's device.
 
 Import the SDK with:
-
 ```javascript
 import YotiDocScan from '@getyoti/react-native-yoti-doc-scan;
 ```
 
-Call the `startSession` method with your session Id and client session token. 
-The method accepts two callbacks: one invoked on success and the other when the result is a failure.
+Call the `startSession` method with your session ID and client session token. 
+The method accepts two callbacks: one invoked on success, and the other when the result is a failure.
+```javascript
+function onSuccess (code, description) {
+    // handle success scenario
+}
+function onError (code, description) {
+    // handle error scenario
+}
+YotiDocScan.startSession(
+    sessionId,
+    clientSessionToken,
+    onSuccess,
+    onError
+);
+```
 
+In addition, you can choose to also specify an Android request code, or set the primary color of the iOS SDK using an RGB value. E.g.:
 ```javascript
-    function onSuccess (code, description) {
-        // handle success scenario
-    }
-    function onError (code, description) {
-        // handle error scenario
-    }
-    YotiDocScan.startSession(
-        sessionId,
-        clientSessionToken,
-        onSuccess,
-        onError
-    );
-  }}
+YotiDocScan.setRequestCode(8888); // default: 9001
+YotiDocScan.setPrimaryColorRGB(0, 0, 0); // default: (34, 157, 255)
 ```
-Optionally, you can specify Android request code. If not, by default it is set to 9001:
-```javascript
-    YotiDocScan.setRequestCode(8888);
-```
+
+To customize the colors of the Android SDK, please refer to its documentation [here](https://github.com/getyoti/yoti-doc-scan-android#colours).
 
 Your callbacks will receive a consistent response with two parameters: `code` (number) and `description` (string).
 The `code` is always populated with one of the values in the results table below.

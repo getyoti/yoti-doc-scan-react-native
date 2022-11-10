@@ -58,6 +58,11 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void setPrimaryColorRGB(double red, double green, double blue) {
+      // Required to maintain cross-platform API compatibility.
+    }
+
+    @ReactMethod
     public void setRequestCode(int requestCode) {
         mRequestCode = requestCode;
     }
