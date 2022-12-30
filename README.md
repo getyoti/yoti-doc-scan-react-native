@@ -34,7 +34,7 @@ If you're using CocoaPods, navigate to your `ios` and update your `Podfile`:
 
 ```diff
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-+ `pod 'react-native-yoti-doc-scan', :path => '../node_modules/react-native-yoti-doc-scan/react-native-yoti-doc-scan.podspec'`
++ `pod 'react-native-yoti-doc-scan', :path => '../node_modules/@getyoti/react-native-yoti-doc-scan/react-native-yoti-doc-scan.podspec'`
 end
 ```
 
@@ -123,13 +123,21 @@ android {
 
 ```
 
+> Running out of memory `space: java.lang.OutOfMemoryError: Java heap space`
+
+Resolve by increasing the daemon memory settings in your `gradle.properties` file:
+
+```groovy
+org.gradle.jvmargs=-Xmx4608m
+```
+
 # Usage
 
 The SDK exposes a single method, `startSession()`, which handles communication between your app and the Yoti app on a user's device.
 
 Import the SDK with:
 ```javascript
-import YotiDocScan from '@getyoti/react-native-yoti-doc-scan;
+import YotiDocScan from '@getyoti/react-native-yoti-doc-scan';
 ```
 
 Call the `startSession` method with your session ID and client session token. 
@@ -204,8 +212,7 @@ Add the following to your settings.gradle file as a new entry before the last li
 
 ```groovy
     include ':react-native-yoti-doc-scan'
-    project(':react-native-yoti-doc-scan').projectDir = new
-    File(rootProject.projectDir, '../node_modules/react-native-yoti-doc-scan/src/android')
+    project(':react-native-yoti-doc-scan').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-yoti-doc-scan/src/android')
 
     include ':app'
 ```
