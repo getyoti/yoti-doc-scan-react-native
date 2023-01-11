@@ -1,10 +1,11 @@
 {
     "name": "@getyoti/react-native-yoti-doc-scan",
-    "version": "1.13.3",
+    "version": "1.13.1",
     "description": "Yoti Doc Scan for React Native",
     "main": "YotiDocScan.js",
     "license": "SEE LICENSE IN LICENSE",
     "author": "Yoti Ltd",
+    "types": "./index.d.ts",
     "contributors": [],
     "repository": {
         "type": "git",
@@ -18,7 +19,7 @@
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
         "react-hot-loader": "^4.12.20",
-        "react-native": "^0.68.5"
+        "react-native": "^0.68.2"
     },
     "dependencies": {
         "keymirror": "^0.1.1",

@@ -20,6 +20,8 @@ Navigate to your iOS folder and update pods with:
 
 React Native autolinking will handle the rest of the native configuration. Should autolinking fail, consult the [troubleshooting instructions](#troubleshooting).
 
+Note: Your iOS may be crashing at runtime, this can be fixed by enabling `use_frameworks!` in your `podfile`.
+
 ## React Native 0.59.x installation
 
 Install the library with:
@@ -101,8 +103,7 @@ If you're using **Proguard** or other obfuscation tool, add the following config
 
 
 Depending on your Android project setup and version of React Native, you
-may encounter the following error during your build process:
-
+may encounter the following errors during your build process:
 > More than one files produce libc++_shared.so
 
 Resolve by adding the following packaging options to your `android` block (`android/app/build.gradle`):
@@ -212,7 +213,7 @@ Add the following to your settings.gradle file as a new entry before the last li
 
 ```groovy
     include ':react-native-yoti-doc-scan'
-    project(':react-native-yoti-doc-scan').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-yoti-doc-scan/src/android')
+    project(':react-native-yoti-doc-scan').projectDir = new File(rootProject.projectDir, '../node_modules/@getyoti/react-native-yoti-doc-scan/android')
 
     include ':app'
 ```
