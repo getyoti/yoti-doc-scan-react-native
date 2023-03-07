@@ -20,6 +20,8 @@ Navigate to your iOS folder and update pods with:
 
 React Native autolinking will handle the rest of the native configuration. Should autolinking fail, consult the [troubleshooting instructions](#troubleshooting).
 
+**Note**: Make sure to add [`use_frameworks!`](https://guides.cocoapods.org/syntax/podfile.html#use_frameworks_bang) to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html).
+
 ## React Native 0.59.x installation
 
 Install the library with:
