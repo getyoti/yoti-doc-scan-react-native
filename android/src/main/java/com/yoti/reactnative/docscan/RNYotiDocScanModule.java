@@ -84,4 +84,9 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             mErrorCallback.invoke(code, description);
         }
     }
+
+    @ReactMethod
+    public void closeSession(boolean animated, Callback completionCallback) {
+        // Required to maintain cross-platform API compatibility.
+    }
 }

@@ -52,6 +52,16 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
     });
 }
 
+RCT_EXPORT_METHOD(closeSession:(BOOL)animated completionCallback:(RCTResponseSenderBlock)completionCallback) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.rootViewController dismissViewControllerAnimated:animated completion:^{
+            if (completionCallback) {
+                completionCallback(nil);
+            }
+        }];
+    });
+}
+
 // MARK: - Data source delegate
 
 - (NSArray<Class<YotiSDKModule>> * _Nonnull)supportedModuleTypesFor:(YotiSDKNavigationController * _Nonnull)navigationController {
