@@ -3,13 +3,15 @@ package com.yoti.reactnative.docscan;
 import android.app.Activity;
 import android.content.Intent;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.BaseActivityEventListener;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-
 import com.yoti.mobile.android.yotisdkcore.YotiSdk;
 
 import static com.yoti.mobile.android.yotisdkcore.YotiSdkKt.YOTI_SDK_REQUEST_CODE;
@@ -20,6 +22,8 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     private YotiSdk mYotiSdk;
     private Callback mErrorCallback;
     private Callback mSuccessCallback;
+    @Nullable
+    private YotiDocScanSdkStopper mYotiSdkStopper;
     private int mRequestCode = YOTI_SDK_REQUEST_CODE;
 
     private final ActivityEventListener mActivityEventListener = new BaseActivityEventListener() {
@@ -28,6 +32,8 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             if (requestCode != mRequestCode) {
                 return;
             }
+
+            cleanupYotiSdkStopper();
 
             int code = mYotiSdk.getSessionStatusCode();
             String description = mYotiSdk.getSessionStatusDescription();
@@ -59,7 +65,7 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void setPrimaryColorRGB(double red, double green, double blue) {
-      // Required to maintain cross-platform API compatibility.
+        // Required to maintain cross-platform API compatibility.
     }
 
     @ReactMethod
@@ -77,8 +83,10 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             return;
         }
 
+        initYotiSdkStopper(currentActivity);
         boolean success = mYotiSdk.setSessionId(sessionId).setClientSessionToken(clientSessionToken).start(currentActivity, mRequestCode);
         if (!success) {
+            cleanupYotiSdkStopper();
             int code = mYotiSdk.getSessionStatusCode();
             String description = mYotiSdk.getSessionStatusDescription();
             mErrorCallback.invoke(code, description);
@@ -87,6 +95,22 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void closeSession(boolean animated, Callback completionCallback) {
-        // Required to maintain cross-platform API compatibility.
+        if (mYotiSdkStopper != null) {
+            mYotiSdkStopper.stopSdk(animated);
+            cleanupYotiSdkStopper();
+            completionCallback.invoke();
+        }
+    }
+
+    private void initYotiSdkStopper(@NonNull final Activity currentActivity) {
+        mYotiSdkStopper = new YotiDocScanSdkStopper();
+        mYotiSdkStopper.init(currentActivity.getApplication());
+    }
+
+    private void cleanupYotiSdkStopper() {
+        if (mYotiSdkStopper != null) {
+            mYotiSdkStopper.cleanup();
+            mYotiSdkStopper = null;
+        }
     }
 }
