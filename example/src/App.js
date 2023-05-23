@@ -1,15 +1,10 @@
-/**
- * Sample React Native App
- *
- */
-
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
 import Button from './components/Button'
 import Header from './components/Header';
 import Input from './components/Input';
 import InputSpacer from './components/InputSpacer';
-import YotiDocScan from '@getyoti/react-native-yoti-doc-scan';
+import RNYotiDocScan from '@getyoti/yoti-doc-scan-react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +13,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
   },
   welcome: {
-    fontFamily: 'Prompt-SemiBold',
     fontSize: 20,
     color: '#444',
     textAlign: 'center',
@@ -30,7 +24,6 @@ const styles = StyleSheet.create({
   },
   intro: {
     color: '#475056',
-    fontFamily: 'Prompt-Medium',
     fontSize: 12,
     marginBottom: 15,
   },
@@ -44,24 +37,20 @@ const styles = StyleSheet.create({
   resultsHeader: {paddingTop: 5, width: 200},
   resultsHeaderText: {
     textAlign: 'center',
-    fontFamily: 'Prompt-Medium',
     color: 'white',
   },
   resultTitle: {
     color: '#444',
-    fontFamily: 'Prompt-SemiBold',
     fontSize: 16,
     marginBottom: 0,
   },
   resultDescription: {
     color: '#475056',
-    fontFamily: 'Prompt-ExtraLight',
     fontSize: 8,
     marginTop: 15,
   },
   resultText: {
     color: '#444',
-    fontFamily: 'Prompt-Regular',
     fontSize: 12,
     marginBottom: 15,
   },
@@ -93,10 +82,7 @@ export default () => {
   const [description, setDescription] = useState(null);
   const [sessionId, setSessionId] = useState('');
   const [clientSessionToken, setClientSessionToken] = useState('');
-
-  const showYotiButton =
-    sessionId.length > 0 &&
-    clientSessionToken.length > 0
+  const showYotiButton = sessionId.length > 0 && clientSessionToken.length > 0
 
   useEffect(() => {
     if (!showYotiButton) {
@@ -129,7 +115,7 @@ export default () => {
               />
               <InputSpacer />
               <Input
-                placeholder="Session Token"
+                placeholder="Session token"
                 value={clientSessionToken}
                 onChangeText={setClientSessionToken}
               />
@@ -148,10 +134,10 @@ export default () => {
                       setCode(code)
                       setDescription(description)
                     }
-                    YotiDocScan.setRequestCode(9999); // Optional: Android request Code customisation
-                    YotiDocScan.startSession(sessionId, clientSessionToken, onSuccess, onError);
+                    RNYotiDocScan.setRequestCode(9999); // Optional request code for Android
+                    RNYotiDocScan.startSession(sessionId, clientSessionToken, onSuccess, onError);
                   }}
-                  title="START SESSION"
+                  title="Start session"
                 />
               )}
             </View>
@@ -174,7 +160,7 @@ function Results({code, description}) {
           },
         ]}>
         <Text style={styles.resultsHeaderText}>
-          {isSuccessOutcome ? 'SUCCESS' : 'ERROR'}
+          {isSuccessOutcome ? 'Success' : 'Error'}
         </Text>
       </View>
 

@@ -1,97 +1,53 @@
-![YotiBanner](./yoti_banner.png)
+# Yoti IDV, React Native
 
-# Yoti Doc Scan SDK for React Native
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/getyoti/yoti-doc-scan-react-native?label=latest%20release)](https://github.com/getyoti/yoti-doc-scan-react-native/releases) 
+[![Publish Release](https://github.com/getyoti/yoti-doc-scan-react-native/workflows/Publish%20Release/badge.svg)](https://github.com/getyoti/yoti-doc-scan-react-native/actions?query=workflow%3A%22Publish+Release%22)
+![Illustration](./Illustration.png)
 
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/getyoti/yoti-doc-scan-react-native?label=latest%20release)](https://github.com/getyoti/yoti-doc-scan-react-native/releases) [![Publish Release](https://github.com/getyoti/yoti-doc-scan-react-native/workflows/Publish%20Release/badge.svg)](https://github.com/getyoti/yoti-doc-scan-react-native/actions?query=workflow%3A%22Publish+Release%22)
-
-Yoti is an identity checking platform that allows organisations to verify who people are, online and in person. The Yoti Doc Scan SDK allows the user to take a photo of their identifying document which we verify instantly and prepare a response which your system can then retrieve. Further information can be found in the [documentation](https://developers.yoti.com/yoti/getting-started-docscan).
+A react native wrapper of Yoti IDV for [Android](https://github.com/getyoti/yoti-doc-scan-android) and [iOS](https://github.com/getyoti/yoti-doc-scan-ios). Yoti IDV allows a user of your app to take a photo of their document, as well as to scan or capture their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.s
 
 ## Prerequisites
+To integrate with Yoti IDV, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/identity-verification/overview) for more details or get in touch with us [here](https://developers.yoti.com/support)).
 
-A supporting Yoti Doc Scan SDK backend installation is required. Learn more about the backend SDK in the [Getting Started guide](https://developers.yoti.com/yoti/getting-started-docscan).
+## Requirements
+- [Android SDK 3+](https://github.com/getyoti/yoti-doc-scan-android/releases)
+- [iOS SDK 4+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
 
-## React Native >= 0.60.0 installation
-
-`yarn add @getyoti/react-native-yoti-doc-scan`
-
-Navigate to your iOS folder and update pods with:
-
-`pod install`
-
-React Native autolinking will handle the rest of the native configuration. Should autolinking fail, consult the [troubleshooting instructions](#troubleshooting).
-
-**Note**: Make sure to add [`use_frameworks!`](https://guides.cocoapods.org/syntax/podfile.html#use_frameworks_bang) to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html).
-
-## React Native 0.59.x installation
-
-Install the library with:
-
-`yarn add @getyoti/react-native-yoti-doc-scan`
-
-Link the library:
-
-`react-native link @getyoti/react-native-yoti-doc-scan`
-
-If you're using CocoaPods, navigate to your `ios` and update your `Podfile`:
-
-```diff
-  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-+ `pod 'react-native-yoti-doc-scan', :path => '../node_modules/@getyoti/react-native-yoti-doc-scan/react-native-yoti-doc-scan.podspec'`
-end
+## Integration
+Start your integration by adding the following dependency to your `package.json` file:
+```json
+"dependencies": {
+    "@getyoti/yoti-doc-scan-react-native": "^2.0.0"
+}
 ```
 
-And then your pods with:
-
-`pod install`
-
-If autolinking fails, refer to the [troubleshooting instructions](#troubleshooting).
-
-## Android configuration
-
-### Microblink
-
-Add microblink to your repositories in the root build.gradle file (`android/build.gradle`):
-
+### Android
+Continuing with your integration for Android, add the following property and repository to your project's [`build.gradle`](https://developer.android.com/build#build-files) file:
 ```groovy
+buildscript {
+    ext {
+        yotiSdkVersion = "3.1.0"
+    }
+}
 allprojects {
     repositories {
-        mavenCentral()
-        maven { url 'https://maven.microblink.com' }
-        maven { url "https://jitpack.io" }
-        ...
+        maven {
+            url 'https://maven.microblink.com'
+        }
     }
-    ...
 }
 ```
-### Debug build configuration
-
-Add this configuration for the debug build type to your `buildTypes` block (`android/app/build.gradle`):
-
+Now add any of these optional dependencies to your app's [`build.gradle`](https://developer.android.com/build#build-files) file:
 ```groovy
-buildTypes {
-    debug {
-        matchingFallbacks = ['release']
-      ...
-    }
-    ...
+dependencies {
+    implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:${rootProject.ext.yotiSdkVersion}"
+    implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan-sup:${rootProject.ext.yotiSdkVersion}"
+    implementation "com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:${rootProject.ext.yotiSdkVersion}"
+    implementation "com.yoti.mobile.android.sdk:yoti-sdk-facecapture:${rootProject.ext.yotiSdkVersion}" // With embedded AI model
+    implementation "com.yoti.mobile.android.sdk:yoti-sdk-facecapture-unbundled:${rootProject.ext.yotiSdkVersion}" // Without embedded AI model - around 20 MB smaller in size
 }
-
 ```
-If you're using [Firebase Performance Monitoring](https://rnfirebase.io/perf/usage) you'll need to disable it for debug built variant. One way to do this is including this flag in your `gradle.properties` file:
-
-```groovy
-firebasePerformanceInstrumentationEnabled=false
-
-```
-And update your release build command line to enable it:
-
-```groovy
-./gradlew assembleRelease -PfirebasePerformanceInstrumentationEnabled=true
-
-```
-
-### Release build configuration
-If you're using **Proguard** or other obfuscation tool, add the following configuration rules to your proguard-rules.pro file:
+If you're using Proguard or another obfuscation tool, you should also add the following configuration rules to your `proguard-rules.pro` file:
 ```groovy
 -keep class com.yoti.** { *; }
 -keep class com.microblink.** { *; }
@@ -101,162 +57,105 @@ If you're using **Proguard** or other obfuscation tool, add the following config
 -dontwarn javax.annotation.Nullable
 ```
 
-
-Depending on your Android project setup and version of React Native, you
-may encounter the following error during your build process:
-
-> More than one files produce libc++_shared.so
-
-Resolve by adding the following packaging options to your `android` block (`android/app/build.gradle`):
-
-```groovy
-android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    
-    packagingOptions {
-        pickFirst 'lib/x86/libc++_shared.so'
-        pickFirst 'lib/x86_64/libjsc.so'
-        pickFirst 'lib/arm64-v8a/libjsc.so'
-        pickFirst 'lib/arm64-v8a/libc++_shared.so'
-        pickFirst 'lib/x86_64/libc++_shared.so'
-        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
-    }
-    ...
-
-```
-
-> Running out of memory `space: java.lang.OutOfMemoryError: Java heap space`
-
-Resolve by increasing the daemon memory settings in your `gradle.properties` file:
-
-```groovy
-org.gradle.jvmargs=-Xmx4608m
-```
-
-# Usage
-
-The SDK exposes a single method, `startSession()`, which handles communication between your app and the Yoti app on a user's device.
-
-Import the SDK with:
-```javascript
-import YotiDocScan from '@getyoti/react-native-yoti-doc-scan';
-```
-
-Call the `startSession` method with your session ID and client session token. 
-The method accepts two callbacks: one invoked on success, and the other when the result is a failure.
-```javascript
-function onSuccess (code, description) {
-    // handle success scenario
-}
-function onError (code, description) {
-    // handle error scenario
-}
-YotiDocScan.startSession(
-    sessionId,
-    clientSessionToken,
-    onSuccess,
-    onError
-);
-```
-
-In addition, you can choose to also specify an Android request code, or set the primary color of the iOS SDK using an RGB value. E.g.:
-```javascript
-YotiDocScan.setRequestCode(8888); // default: 9001
-YotiDocScan.setPrimaryColorRGB(0, 0, 0); // default: (34, 157, 255)
-```
-
-To customize the colors of the Android SDK, please refer to its documentation [here](https://github.com/getyoti/yoti-doc-scan-android#colours).
-
-Your callbacks will receive a consistent response with two parameters: `code` (number) and `description` (string).
-The `code` is always populated with one of the values in the results table below.
-The `description` is not guaranteed to always have a value and as such your business logic should not rely on it.
-
-
-| Code              | Message                      | Retry possible for the same session                    |
-| ----------------- | ---------------------------- | ---------------------------------- |
-| 0                 | Result with success          | No                                 |
-| 1000              | No error occurred - the end-user cancelled the session for an unknown reason           | Yes |
-| 2000              | Unauthorised request (wrong or expired session token)           | Yes |
-| 2001              | Session not found           | Yes |
-| 2003              | SDK launched without session Token           | Yes |
-| 2004              | SDK launched without session ID           | Yes |
-| 3000              | Yoti's services are down or unable to process the request           | Yes |
-| 3001              | An error occurred during a network request          | Yes |
-| 3002              | User has no network          | Yes |
-| 4000              | The user did not grant permissions to the camera          | Yes |
-| 5000              | No camera (when user's camera was not found and file upload is not allowed)          | No |
-| 5002              | No more local tries for the liveness flow          | Yes |
-| 5003              | SDK is out-of-date - please update the SDK to the latest version          | No |
-| 5004              | Unexpected internal error          | No |
-| 5005              | Unexpected document scanning error          | No |
-| 5006              | Unexpected liveness error          | No |
-| 6000              | Document Capture dependency not found error          | No |
-| 6001              | Liveness Zoom dependency not found error          | No |
-| 6002              | Supplementary document dependency not found error          | No |
-
-## Troubleshooting
-
-<details>
-	<summary>Resolving autolinking failures on Android and iOS</summary>
-
-
 ### iOS
+To continue your integration with iOS, you should add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
+```bash
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+require_relative '../node_modules/react-native/scripts/react_native_pods'
 
-Linker errors pertaining to Swift libraries such as `swiftFoundation` can be resolved with one or more of the solutions mentioned [in this oft-quoted StackOverflow discussion](https://stackoverflow.com/questions/52536380/why-linker-link-static-libraries-with-errors-ios), depending on your React Native version and project setup.
+platform :ios, '11.0'
 
-### Android
-
-Android linking is performed in 3 steps:
-
-#### android/settings.gradle
-
-Add the following to your settings.gradle file as a new entry before the last line which has `include ':app'`:
-
-```groovy
-    include ':react-native-yoti-doc-scan'
-    project(':react-native-yoti-doc-scan').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-yoti-doc-scan/src/android')
-
-    include ':app'
+target 'TargetName' do
+  config = use_native_modules!
+  use_react_native!(:path => config[:reactNativePath])
+  use_frameworks!
+  use_native_modules!
+  pod 'YotiSDKIdentityDocument'         // Optional
+  pod 'YotiSDKSupplementaryDocument'    // Optional
+  pod 'YotiSDKFaceTec'                  // Optional
+  pod 'YotiSDKFaceCapture'              // Optional
+end
 ```
+In addition, you should add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`. 
 
-#### android/app/build.gradle
+And if you have included `YotiSDKIdentityDocument` in your target, make sure to also:
+- Add [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) to your `Info.plist`
+- Add [`com.apple.developer.nfc.readersession.iso7816.select-identifiers`](https://developer.apple.com/documentation/bundleresources/information_property_list/select-identifiers) to your `Info.plist` and include [`A0000002471001`](https://www.icao.int/publications/Documents/9303_p10_cons_en.pdf) as an application identifier for your app to support
+- Turn on [`Near Field Communication Tag Reading`](https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app) under the Signing & Capabilities tab for your project’s target
 
-Find the `dependencies` block in your build.gradle file and add `implementation project(':react-native-yoti-doc-scan')`:
-
-```groovy
-dependencies {
+## Usage
+### 1. Import module
+```javascript
+import RNYotiDocScan from '@getyoti/-yoti-doc-scan-react-native';
+```
+### 2. Launch a session
+Launch a session with its required parameters using the `startSession` function. 
+```javascript
+const successCallback = (code, description) => {
     ...
-    implementation project(':react-native-yoti-doc-scan')
 }
+const errorCallback = (code, description) => {
+    ...
+}
+RNYotiDocScan.startSession(id, token, successCallback, errorCallback);
 ```
 
+### 3. Customizations
+On iOS, you can set the primary color using the following API:
+```javascript
+RNYotiDocScan.setPrimaryColorRGB(0, 0, 0); // default: (34, 157, 255)
+```
+To customize the colors on Android, please refer to its separate [documentation](https://github.com/getyoti/yoti-doc-scan-android#colours). 
 
-#### android/app/src/main/java/..../MainApplication.java
-
-Add this import for the package:
-
-```diff
-import android.app.Application;
-import com.facebook.react.ReactApplication;
-+ import com.yoti.reactnative.RNYotiDocScanPackage;
+In addition, you can choose to also specify a request code on Android:
+```javascript
+YotiDocScan.setRequestCode(0); // default: 9001
 ```
 
-Find the `getPackages` function and add `new RNYotiDocScanPackage()` to the list of packages.
+## Supported languages
+Yoti IDV supports the 9 languages listed in the table below, but their use is driven by the localization configuration of your target. If your target only supports a subset of our SDK's supported languages, our SDK will fall back to English on the ones your target doesn't support.
 
-```diff
-@Override
-protected List<ReactPackage> getPackages() {
-    return Arrays.<ReactPackage>asList(
-        new MainReactPackage(),
-+       new RNYotiDocScanPackage(),
-        ...
-```
+Language | Code
+:-- | :--
+Arabic | ar
+Dutch | nl
+English (default) | en
+French | fr
+German | de
+Italian | it
+Russian | ru
+Spanish | es
+Turkish | tr
 
-</details>
+## Error codes
+Code | Description
+:-- | :--
+1000 | No error occurred. The user cancelled the session
+2000 | Unauthorised request (wrong or expired session token)
+2001 | Session not found
+2002 | Session expired
+2003 | SDK launched without session Token
+2004 | SDK launched without session ID
+3000 | Yoti's services are down or unable to process the request
+3001 | An error occurred during a network request
+3002 | The user did not have a network connection
+4000 | The user did not grant permission to the camera
+4001 | The user submitted a wrong document
+5000 | The user's camera was not found and file upload is not allowed
+5002 | No more local tries for the liveness flow
+5003 | SDK is out-of-date, please update the SDK to the latest version
+5004 | An unexpected internal error occurred
+5005 | An unexpected document capture error occurred
+5006 | An unexpected liveness capture error occurred
+5008 | An unsupported configuration was used
+6000 | The identity document dependency could not be found
+6001 | The face scan dependency could not be found
+6002 | The supplementary document dependency could not be found
+6003 | The face capture dependency could not be found
+7000 | The user did not have the required documents
 
 ## Support
-If you have any other questions please do not hesitate to contact clientsupport@yoti.com.
-Once we have answered your question we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
+If you have any questions, please do not hesitate to contact clientsupport@yoti.com. Once we have answered your question, we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
 
 ## Licence
-Please find the licence for the SDK [here](https://www.yoti.com/wp-content/uploads/2019/08/Yoti-Doc-Scan-SDK-Terms.pdf).
+See the licence for our SDK [here](https://www.yoti.com/terms/identity-verification).

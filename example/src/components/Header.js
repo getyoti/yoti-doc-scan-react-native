@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
   },
   icon: {width: 109.375 / 2, height: 50 / 2, marginBottom: 10},
   welcome: {
-    fontFamily: 'Prompt-SemiBold',
     fontSize: 20,
     color: '#444',
     textAlign: 'center',

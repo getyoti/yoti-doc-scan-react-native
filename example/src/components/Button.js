@@ -1,10 +1,9 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const styles = StyleSheet.create({
   buttonText: {
     color: '#ffffff',
-    fontFamily: 'Prompt-Medium',
     fontSize: 14,
     textAlign: 'center',
   },
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
   }
 });
 
-function Button({onPress, title}) {
+function Button({ onPress, title }) {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>

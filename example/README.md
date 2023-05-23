@@ -1,27 +1,15 @@
-# Example app
+# Yoti IDV, Example
 
-This file contains installation instructions for the example app.
-The instructions assume you have a [working React Native development environment](https://reactnative.dev/docs/getting-started) for Android and/or iOS.
+An example of how to run the react native wrapper of Yoti IDV for [Android](https://github.com/getyoti/yoti-doc-scan-android) and [iOS](https://github.com/getyoti/yoti-doc-scan-ios).
+
+## Prerequisites
+To run this example, a working working React Native environment is needed (see [reactnative.dev/docs/getting-started](https://reactnative.dev/docs/getting-started)).
 
 ## Installation
-- Navigate to the example directory: `cd example`
-- Install dependencies: `yarn install`
-- Install pods if you intend to run on iOS: `cd ios && pod install`
+Install the wrapper's dependencies by running `yarn install` from the `example` directory, and then proceed to the relevant platform section below.
 
-# Running on Android (via Android Studio)
+### Android
+To continue your installation with Android, you should run `yarn start` and `adb -s DEVICE_ID_HERE reverse tcp:8081 tcp:8081` (or `adb reverse tcp:8081 tcp:8081` if using a simulator) from the `example` directory. , and then open the `example/android` project in Android Studio. You can now sync Gradle and build the app.
 
-- In the example folder, run: `yarn start`
-- Open the `example/android` project in Android Studio
-- Sync Gradle
-- Run a build as you regularly would, preferrably on a device with the Yoti app installed
-- If you are running on a physical device, remember to execute `adb -s DEVICE_ID_HERE reverse tcp:8081 tcp:8081`. You can find the appropriate device id by running `adb devices`
-
-# Android (using React Native CLI)
-- Simply execute `yarn run android` in the `example` folder
-
-# iOS (XCode)
-- Open the `ios/example.xcworkspace` file with XCode
-- Run a build as you regularly would, preferrably on a device with the Yoti app installed
-
-# iOS (with React Native CLI)
-- Run `yarn run ios` in the `example` folder
+### iOS
+To continue your installation with iOS, you should run `pod install` from the `example/ios` directory, and then open the project in Xcode through the `Demo.xcworkspace` file.

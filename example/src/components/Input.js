@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
   },
   textInput: {
     flex: 1,
-    fontFamily: 'Prompt-Regular',
     color: '#333b40',
     marginLeft: 10,
     marginRight: 37,

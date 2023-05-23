@@ -2,20 +2,16 @@ package com.yoti.reactnative.docscan;
 
 import android.app.Activity;
 import android.content.Intent;
-
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.BaseActivityEventListener;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-
 import com.yoti.mobile.android.yotisdkcore.YotiSdk;
-
 import static com.yoti.mobile.android.yotisdkcore.YotiSdkKt.YOTI_SDK_REQUEST_CODE;
 
 public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
-
     private final static int SESSION_SUCCESS_CODE = 0;
     private YotiSdk mYotiSdk;
     private Callback mErrorCallback;
@@ -28,15 +24,12 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             if (requestCode != mRequestCode) {
                 return;
             }
-
             int code = mYotiSdk.getSessionStatusCode();
             String description = mYotiSdk.getSessionStatusDescription();
-
             if (resultCode == Activity.RESULT_OK && code == SESSION_SUCCESS_CODE) {
                 mSuccessCallback.invoke(code, description);
                 return;
             }
-
             mErrorCallback.invoke(code, description);
         }
     };
@@ -59,7 +52,7 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void setPrimaryColorRGB(double red, double green, double blue) {
-      // Required to maintain cross-platform API compatibility.
+        // Required to maintain cross-platform API compatibility.
     }
 
     @ReactMethod
@@ -76,7 +69,6 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             mErrorCallback.invoke("E_ACTIVITY_DOES_NOT_EXIST");
             return;
         }
-
         boolean success = mYotiSdk.setSessionId(sessionId).setClientSessionToken(clientSessionToken).start(currentActivity, mRequestCode);
         if (!success) {
             int code = mYotiSdk.getSessionStatusCode();
