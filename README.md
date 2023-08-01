@@ -1,10 +1,10 @@
 # Yoti IDV, React Native
 
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/getyoti/yoti-doc-scan-react-native?label=latest%20release)](https://github.com/getyoti/yoti-doc-scan-react-native/releases) 
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/getyoti/yoti-doc-scan-react-native?label=latest%20release)](https://github.com/getyoti/yoti-doc-scan-react-native/releases)
 [![Publish Release](https://github.com/getyoti/yoti-doc-scan-react-native/workflows/Publish%20Release/badge.svg)](https://github.com/getyoti/yoti-doc-scan-react-native/actions?query=workflow%3A%22Publish+Release%22)
 ![Illustration](./Illustration.png)
 
-A react native wrapper of Yoti IDV for [Android](https://github.com/getyoti/yoti-doc-scan-android) and [iOS](https://github.com/getyoti/yoti-doc-scan-ios). Yoti IDV allows a user of your app to take a photo of their document, as well as to scan or capture their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.s
+A react native wrapper of Yoti IDV for [Android](https://github.com/getyoti/yoti-doc-scan-android) and [iOS](https://github.com/getyoti/yoti-doc-scan-ios). Yoti IDV allows a user of your app to take a photo of their document, as well as to scan or capture their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
 
 ## Prerequisites
 To integrate with Yoti IDV, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/identity-verification/overview) for more details or get in touch with us [here](https://developers.yoti.com/support)).
@@ -26,7 +26,7 @@ Continuing with your integration for Android, add the following property and rep
 ```groovy
 buildscript {
     ext {
-        yotiSdkVersion = "3.1.0"
+        yotiSdkVersion = "3.1.1"
     }
 }
 allprojects {
@@ -76,7 +76,7 @@ target 'TargetName' do
   pod 'YotiSDKFaceCapture'              // Optional
 end
 ```
-In addition, you should add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`. 
+In addition, you should add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`.
 
 And if you have included `YotiSDKIdentityDocument` in your target, make sure to also:
 - Add [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) to your `Info.plist`
@@ -86,10 +86,10 @@ And if you have included `YotiSDKIdentityDocument` in your target, make sure to 
 ## Usage
 ### 1. Import module
 ```javascript
-import RNYotiDocScan from '@getyoti/-yoti-doc-scan-react-native';
+import RNYotiDocScan from '@getyoti/yoti-doc-scan-react-native';
 ```
 ### 2. Launch a session
-Launch a session with its required parameters using the `startSession` function. 
+Launch a session with its required parameters using the `startSession` function.
 ```javascript
 const successCallback = (code, description) => {
     ...
@@ -105,11 +105,11 @@ On iOS, you can set the primary color using the following API:
 ```javascript
 RNYotiDocScan.setPrimaryColorRGB(0, 0, 0); // default: (34, 157, 255)
 ```
-To customize the colors on Android, please refer to its separate [documentation](https://github.com/getyoti/yoti-doc-scan-android#colours). 
+To customize the colors on Android, please refer to its separate [documentation](https://github.com/getyoti/yoti-doc-scan-android#colours).
 
 In addition, you can choose to also specify a request code on Android:
 ```javascript
-YotiDocScan.setRequestCode(0); // default: 9001
+RNYotiDocScan.setRequestCode(0); // default: 9001
 ```
 
 ## Supported languages
@@ -155,7 +155,7 @@ Code | Description
 7000 | The user did not have the required documents
 
 ## Support
-If you have any questions, please do not hesitate to contact clientsupport@yoti.com. Once we have answered your question, we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
+For any questions or support please contact us [here](https://support.yoti.com). Once we have answered your question, we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
 
 ## Licence
-See the licence for our SDK [here](https://www.yoti.com/terms/identity-verification).
+See the licence [here](https://www.yoti.com/terms/identity-verification).

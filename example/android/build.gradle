@@ -4,7 +4,7 @@ buildscript {
         minSdkVersion = 21
         compileSdkVersion = 29
         targetSdkVersion = 29
-        yotiSdkVersion = "3.1.0"
+        yotiSdkVersion = "3.1.1"
     }
     repositories {
         google()
