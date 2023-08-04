@@ -1,22 +1,14 @@
 {
-    "name": "@getyoti/react-native-yoti-doc-scan",
-    "version": "1.15.0",
-    "description": "Yoti Doc Scan for React Native",
-    "main": "YotiDocScan.js",
-    "license": "SEE LICENSE IN LICENSE",
+    "name": "@getyoti/yoti-doc-scan-react-native",
+    "description": "A react native SDK for Yoti's identity verification services",
+    "homepage": "https://github.com/getyoti/yoti-doc-scan-react-native",
+    "license": "https://www.yoti.com/terms/identity-verification",
     "author": "Yoti Ltd",
-    "contributors": [],
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:getyoti/yoti-doc-scan-react-native.git"
-    },
+    "main": "RNYotiDocScan.js",
+    "version": "2.0.0",
     "devDependencies": {
-        "babel-eslint": "^10.1.0",
-        "eslint": "^6.8.0",
-        "eslint-config-airbnb": "^18.1.0",
-        "eslint-plugin-react": "^7.19.0",
-        "react": "^16.7.0",
-        "react-dom": "^16.7.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
         "react-hot-loader": "^4.12.20",
         "react-native": "^0.68.5"
     },
@@ -24,13 +16,14 @@
         "keymirror": "^0.1.1",
         "prop-types": "^15.7.2"
     },
-    "scripts": {
-        "test": "node_modules/.bin/eslint *.js"
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:getyoti/yoti-doc-scan-react-native.git"
     },
     "files": [
+        "RNYotiDocScan.js",
         "android",
-        "YotiDocScan.js",
         "ios",
-        "react-native-yoti-doc-scan.podspec"
+        "yoti-doc-scan-react-native.podspec"
     ]
 }
