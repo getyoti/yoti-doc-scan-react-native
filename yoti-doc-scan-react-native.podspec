@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
   spec.license              = package["license"]
   spec.author               = package["author"]
   spec.version              = package["version"]
-  spec.pod_target_xcconfig  = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/**" }
+  spec.pod_target_xcconfig  = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/**" "$(PODS_XCFRAMEWORKS_BUILD_DIR)/**" }
   spec.source               = { :git => "https://github.com/getyoti/yoti-doc-scan-react-native.git", :tag => "#{spec.version}" }
   spec.source_files         = "ios/**/*.{h,m}"
   spec.platform             = :ios, "11.0"
