@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -202,57 +202,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VUTP72GG4;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/RCT-Folly\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/RCTTypeSafety\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Codegen\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Core\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-CoreModules\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTAnimation\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTBlob\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTImage\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTLinking\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTNetwork\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTSettings\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTText\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTVibration\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsi\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsiexecutor\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-logger\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-perflogger\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftProtobuf\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/fmt\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/yoti-doc-scan-react-native\"",
-					"\"${PODS_ROOT}/PPBlinkID\"",
-					"\"${PODS_ROOT}/YotiDocumentCapture/YotiDocumentCapture\"",
-					"\"${PODS_ROOT}/YotiFoundation/YotiFoundation\"",
-					"\"${PODS_ROOT}/YotiNetwork/YotiNetwork\"",
-					"\"${PODS_ROOT}/YotiSDKCommon/YotiSDKCommon\"",
-					"\"${PODS_ROOT}/YotiSDKCore/YotiSDKCore\"",
-					"\"${PODS_ROOT}/YotiSDKDesign/YotiSDKDesign\"",
-					"\"${PODS_ROOT}/YotiSDKDocument/YotiSDKDocument\"",
-					"\"${PODS_ROOT}/YotiSDKFace/YotiSDKFace\"",
-					"\"${PODS_ROOT}/YotiSDKFaceTec/YotiSDKFaceTec\"",
-					"\"${PODS_ROOT}/YotiSDKNetwork/YotiSDKNetwork\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiCommon\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiDocumentCapture\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiFoundation\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiNetwork\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKCommon\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKCore\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKDesign\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKDocument\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKFace\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKFaceTec\"",
-					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKNetwork\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -287,6 +238,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VUTP72GG4;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
