@@ -26,7 +26,7 @@ Continuing with your integration for Android, add the following property and rep
 ```groovy
 buildscript {
     ext {
-        yotiSdkVersion = "3.2.0"
+        yotiSdkVersion = "3.2.2"
     }
 }
 allprojects {
