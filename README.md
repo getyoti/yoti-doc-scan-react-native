@@ -11,13 +11,13 @@ To integrate with Yoti IDV, a working infrastructure is needed (see [developers.
 
 ## Requirements
 - [Android SDK 3+](https://github.com/getyoti/yoti-doc-scan-android/releases)
-- [iOS SDK 4+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
+- [iOS SDK 5+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
 
 ## Integration
 Start your integration by adding the following dependency to your `package.json` file:
 ```json
 "dependencies": {
-    "@getyoti/yoti-doc-scan-react-native": "^2.0.2"
+    "@getyoti/yoti-doc-scan-react-native": "^3.0.0"
 }
 ```
 
@@ -26,7 +26,7 @@ Continuing with your integration for Android, add the following property and rep
 ```groovy
 buildscript {
     ext {
-        yotiSdkVersion = "3.2.2"
+        yotiSdkVersion = "3.3.0"
     }
 }
 allprojects {
@@ -70,6 +70,8 @@ target 'TargetName' do
   use_react_native!(:path => config[:reactNativePath])
   use_frameworks!
   use_native_modules!
+  pod 'YotiDocumentScan'                // Include if `YotiSDKIdentityDocument` is included and to support identity document OCR
+  pod 'YotiNFC'                         // Include if `YotiSDKIdentityDocument` is included and to support identity document NFC
   pod 'YotiSDKIdentityDocument'         // Optional
   pod 'YotiSDKSupplementaryDocument'    // Optional
   pod 'YotiSDKFaceTec'                  // Optional
@@ -78,7 +80,7 @@ end
 ```
 In addition, you should add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`.
 
-And if you have included `YotiSDKIdentityDocument` in your target, make sure to also:
+And if you have included `YotiNFC` in your target, make sure to also:
 - Add [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) to your `Info.plist`
 - Add [`com.apple.developer.nfc.readersession.iso7816.select-identifiers`](https://developer.apple.com/documentation/bundleresources/information_property_list/select-identifiers) to your `Info.plist` and include [`A0000002471001`](https://www.icao.int/publications/Documents/9303_p10_cons_en.pdf) as an application identifier for your app to support
 - Turn on [`Near Field Communication Tag Reading`](https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app) under the Signing & Capabilities tab for your project’s target
@@ -134,11 +136,12 @@ Code | Description
 2000 | Unauthorised request (wrong or expired session token)
 2001 | Session not found
 2002 | Session expired
-2003 | SDK launched without session Token
-2004 | SDK launched without session ID
+2003 | SDK launched without a session token
+2004 | SDK launched without a session id
 3000 | Yoti's services are down or unable to process the request
 3001 | An error occurred during a network request
 3002 | The user did not have a network connection
+3003 | A network request timed out
 4000 | The user did not grant permission to the camera
 4001 | The user submitted a wrong document
 5000 | The user's camera was not found and file upload is not allowed

@@ -8,6 +8,8 @@ target 'Demo' do
   use_react_native!(:path => config[:reactNativePath])
   use_frameworks!
   use_native_modules!
+  pod 'YotiDocumentScan'
+  pod 'YotiNFC'
   pod 'YotiSDKIdentityDocument'
   pod 'YotiSDKFaceTec'
 end
