@@ -1,7 +1,5 @@
 #import "RNYotiDocScan.h"
 #import <React/RCTUtils.h>
-#import <YotiSDKNetwork/YotiSDKNetwork-Swift.h>
-#import <YotiSDKCommon/YotiSDKCommon-Swift.h>
 #import <YotiSDKCore/YotiSDKCore-Swift.h>
 #if __has_include(<YotiSDKIdentityDocument/YotiSDKIdentityDocument-Swift.h>)
 #import <YotiSDKIdentityDocument/YotiSDKIdentityDocument-Swift.h>
