@@ -26,7 +26,7 @@ Continuing with your integration for Android, add the following property and rep
 ```groovy
 buildscript {
     ext {
-        yotiSdkVersion = "3.3.0"
+        yotiSdkVersion = "3.4.0"
     }
 }
 allprojects {
@@ -40,11 +40,16 @@ allprojects {
 Now add any of these optional dependencies to your app's [`build.gradle`](https://developer.android.com/build#build-files) file:
 ```groovy
 dependencies {
+    // With automatic capture via OCR and NFC capture
     implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:${rootProject.ext.yotiSdkVersion}"
+    // With manual capture only, no OCR, no NFC - around 14Mb smaller in size
+    implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan-slim:${rootProject.ext.yotiSdkVersion}" 
     implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan-sup:${rootProject.ext.yotiSdkVersion}"
     implementation "com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:${rootProject.ext.yotiSdkVersion}"
-    implementation "com.yoti.mobile.android.sdk:yoti-sdk-facecapture:${rootProject.ext.yotiSdkVersion}" // With embedded AI model
-    implementation "com.yoti.mobile.android.sdk:yoti-sdk-facecapture-unbundled:${rootProject.ext.yotiSdkVersion}" // Without embedded AI model - around 20 MB smaller in size
+    // With embedded AI model
+    implementation "com.yoti.mobile.android.sdk:yoti-sdk-facecapture:${rootProject.ext.yotiSdkVersion}" 
+     // Without embedded AI model - around 20 MB smaller in size
+    implementation "com.yoti.mobile.android.sdk:yoti-sdk-facecapture-unbundled:${rootProject.ext.yotiSdkVersion}"
 }
 ```
 If you're using Proguard or another obfuscation tool, you should also add the following configuration rules to your `proguard-rules.pro` file:
