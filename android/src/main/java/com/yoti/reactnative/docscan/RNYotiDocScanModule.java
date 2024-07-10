@@ -26,11 +26,13 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             }
             int code = mYotiSdk.getSessionStatusCode();
             String description = mYotiSdk.getSessionStatusDescription();
-            if (resultCode == Activity.RESULT_OK && code == SESSION_SUCCESS_CODE) {
+            if (resultCode == Activity.RESULT_OK && code == SESSION_SUCCESS_CODE && mSuccessCallback != null) {
                 mSuccessCallback.invoke(code, description);
                 return;
             }
-            mErrorCallback.invoke(code, description);
+            if (mErrorCallback != null) {
+                mErrorCallback.invoke(code, description);
+            }
         }
     };
 
