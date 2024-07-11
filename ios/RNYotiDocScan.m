@@ -102,7 +102,7 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
     if (_primaryColor != nil) {
         return _primaryColor;
     } else {
-        return [UIColor colorWithRed:34.0/255.0 green:157.0/255.0 blue:255.0/255.0 alpha:1.0];
+        return [UIColor colorWithRed:40.0/255.0 green:117.0/255.0 blue:188.0/255.0 alpha:1.0];
     }
 }
 

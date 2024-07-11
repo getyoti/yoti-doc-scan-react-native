@@ -43,11 +43,11 @@ dependencies {
     // With automatic capture via OCR and NFC capture
     implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:${rootProject.ext.yotiSdkVersion}"
     // With manual capture only, no OCR, no NFC - around 14Mb smaller in size
-    implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan-slim:${rootProject.ext.yotiSdkVersion}" 
+    implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan-slim:${rootProject.ext.yotiSdkVersion}"
     implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan-sup:${rootProject.ext.yotiSdkVersion}"
     implementation "com.yoti.mobile.android.sdk:yoti-sdk-liveness-zoom:${rootProject.ext.yotiSdkVersion}"
     // With embedded AI model
-    implementation "com.yoti.mobile.android.sdk:yoti-sdk-facecapture:${rootProject.ext.yotiSdkVersion}" 
+    implementation "com.yoti.mobile.android.sdk:yoti-sdk-facecapture:${rootProject.ext.yotiSdkVersion}"
      // Without embedded AI model - around 20 MB smaller in size
     implementation "com.yoti.mobile.android.sdk:yoti-sdk-facecapture-unbundled:${rootProject.ext.yotiSdkVersion}"
 }
@@ -110,7 +110,7 @@ RNYotiDocScan.startSession(id, token, successCallback, errorCallback);
 ### 3. Customizations
 On iOS, you can set the primary color using the following API:
 ```javascript
-RNYotiDocScan.setPrimaryColorRGB(0, 0, 0); // default: (34, 157, 255)
+RNYotiDocScan.setPrimaryColorRGB(0, 0, 0); // default: (40, 117, 188)
 ```
 To customize the colors on Android, please refer to its separate [documentation](https://github.com/getyoti/yoti-doc-scan-android#colours).
 
