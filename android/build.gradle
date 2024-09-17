@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion safeExtGet('minSdkVersion', 21)
         targetSdkVersion safeExtGet('targetSdkVersion', 33)
-        versionCode 301
-        versionName "3.0.1"
+        versionCode 302
+        versionName "3.0.2"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
