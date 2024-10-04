@@ -23,7 +23,8 @@ NSInteger const kYotiSuccessStatusCode = 0;
 @property (nonatomic, strong) NSString *sessionID;
 @property (nonatomic, strong) NSString *sessionToken;
 @property (nonatomic, assign) BOOL setUpCanadaServerLocation;
-@property (nonatomic, strong) UIColor *primaryColor;
+@property (nonatomic, strong) UIColor *lightPrimaryColor;
+@property (nonatomic, strong) UIColor *darkPrimaryColor;
 @property (nonatomic, strong) RCTResponseSenderBlock errorCallback;
 @property (nonatomic, strong) RCTResponseSenderBlock successCallback;
 @end
@@ -36,8 +37,12 @@ RCT_EXPORT_METHOD(useCanadaService) {
     _setUpCanadaServerLocation = YES;
 }
 
-RCT_EXPORT_METHOD(setPrimaryColorRGB:(double)red green:(double)green blue:(double)blue) {
-    _primaryColor = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
+RCT_EXPORT_METHOD(setLightPrimaryColorRGB:(double)red green:(double)green blue:(double)blue) {
+    _lightPrimaryColor = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
+}
+
+RCT_EXPORT_METHOD(setDarkPrimaryColorRGB:(double)red green:(double)green blue:(double)blue) {
+    _darkPrimaryColor = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
 }
 
 RCT_EXPORT_METHOD(setRequestCode:(NSNumber * _Nonnull)requestCode) {
@@ -98,11 +103,19 @@ RCT_EXPORT_METHOD(startSession:(NSString *)sessionId clientSessionToken:(NSStrin
 }
 
 // MARK: - YotiSDKDelegate
-- (UIColor * _Nonnull)primaryColorFor:(YotiSDKNavigationController * _Nonnull)navigationController {
-    if (_primaryColor != nil) {
-        return _primaryColor;
+- (UIColor * _Nonnull)lightPrimaryColorFor:(YotiSDKNavigationController * _Nonnull)navigationController {
+    if (_lightPrimaryColor != nil) {
+        return _lightPrimaryColor;
     } else {
         return [UIColor colorWithRed:40.0/255.0 green:117.0/255.0 blue:188.0/255.0 alpha:1.0];
+    }
+}
+
+- (UIColor * _Nonnull)darkPrimaryColorFor:(YotiSDKNavigationController * _Nonnull)navigationController {
+    if (_darkPrimaryColor != nil) {
+        return _darkPrimaryColor;
+    } else {
+        return [UIColor colorWithRed:145.0/255.0 green:190.0/255.0 blue:255.0/255.0 alpha:1.0];
     }
 }
 

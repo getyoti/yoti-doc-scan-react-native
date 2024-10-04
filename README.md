@@ -11,13 +11,13 @@ To integrate with Yoti IDV, a working infrastructure is needed (see [developers.
 
 ## Requirements
 - [Android SDK 3+](https://github.com/getyoti/yoti-doc-scan-android/releases)
-- [iOS SDK 5+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
+- [iOS SDK 6+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
 
 ## Integration
 Start your integration by adding the following dependency to your `package.json` file:
 ```json
 "dependencies": {
-    "@getyoti/yoti-doc-scan-react-native": "^3.0.0"
+    "@getyoti/yoti-doc-scan-react-native": "^4.0.0"
 }
 ```
 
@@ -108,9 +108,10 @@ RNYotiDocScan.startSession(id, token, successCallback, errorCallback);
 ```
 
 ### 3. Customizations
-On iOS, you can set the primary color using the following API:
+On iOS, you can set the primary colors using the following API:
 ```javascript
-RNYotiDocScan.setPrimaryColorRGB(0, 0, 0); // default: (40, 117, 188)
+RNYotiDocScan.setLightPrimaryColorRGB(0, 0, 0); // default: (40, 117, 188)
+RNYotiDocScan.setDarkPrimaryColorRGB(0, 0, 0); // default: (145, 190, 255)
 ```
 To customize the colors on Android, please refer to its separate [documentation](https://github.com/getyoti/yoti-doc-scan-android#colours).
 
