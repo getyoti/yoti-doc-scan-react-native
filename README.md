@@ -10,14 +10,14 @@ A react native wrapper of Yoti IDV for [Android](https://github.com/getyoti/yoti
 To integrate with Yoti IDV, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/identity-verification/overview) for more details or get in touch with us [here](https://developers.yoti.com/support)).
 
 ## Requirements
-- [Android SDK 3+](https://github.com/getyoti/yoti-doc-scan-android/releases)
-- [iOS SDK 6+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
+- [Android SDK 4+](https://github.com/getyoti/yoti-doc-scan-android/releases)
+- [iOS SDK 7+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
 
 ## Integration
 Start your integration by adding the following dependency to your `package.json` file:
 ```json
 "dependencies": {
-    "@getyoti/yoti-doc-scan-react-native": "^4.0.0"
+    "@getyoti/yoti-doc-scan-react-native": "^5.0.0"
 }
 ```
 
@@ -26,13 +26,13 @@ Continuing with your integration for Android, add the following property and rep
 ```groovy
 buildscript {
     ext {
-        yotiSdkVersion = "3.5.0"
+        yotiSdkVersion = "4.0.0"
     }
 }
 allprojects {
     repositories {
         maven {
-            url 'https://maven.microblink.com'
+            url 'https://maven.regulaforensics.com/RegulaDocumentReader'
         }
     }
 }
@@ -54,12 +54,14 @@ dependencies {
 ```
 If you're using Proguard or another obfuscation tool, you should also add the following configuration rules to your `proguard-rules.pro` file:
 ```groovy
+-keepclassmembers class kotlinx.** {
+    volatile <fields>;
+}
 -keep class com.yoti.** { *; }
--keep class com.microblink.** { *; }
--keep class com.microblink.**$* { *; }
--dontwarn com.microblink.**
--keep class com.facetec.zoom.** { *; }
+-dontwarn com.facetec.sdk.**
+-keep class com.facetec.sdk.** { *; }
 -dontwarn javax.annotation.Nullable
+-keepclassmembers class io.ktor.** { volatile <fields>; }
 ```
 
 ### iOS
@@ -68,7 +70,7 @@ To continue your integration with iOS, you should add the following to your [`Po
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 
-platform :ios, '11.0'
+platform :ios, '13.0'
 
 target 'TargetName' do
   config = use_native_modules!
@@ -83,45 +85,50 @@ target 'TargetName' do
   pod 'YotiSDKFaceCapture'              // Optional
 end
 ```
-In addition, you should add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`.
-
-And if you have included `YotiNFC` in your target, make sure to also:
-- Add [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) to your `Info.plist`
-- Add [`com.apple.developer.nfc.readersession.iso7816.select-identifiers`](https://developer.apple.com/documentation/bundleresources/information_property_list/select-identifiers) to your `Info.plist` and include [`A0000002471001`](https://www.icao.int/publications/Documents/9303_p10_cons_en.pdf) as an application identifier for your app to support
-- Turn on [`Near Field Communication Tag Reading`](https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app) under the Signing & Capabilities tab for your project’s target
+In addition, you should [modify the properties and capabilities of your project's target](https://github.com/getyoti/yoti-doc-scan-ios?tab=readme-ov-file#5-modify-the-properties-and-capabilities-of-your-projects-target).
 
 ## Usage
 ### 1. Import module
 ```javascript
 import RNYotiDocScan from '@getyoti/yoti-doc-scan-react-native';
 ```
-### 2. Launch a session
-Launch a session with its required parameters using the `startSession` function.
-```javascript
-const successCallback = (code, description) => {
-    ...
-}
-const errorCallback = (code, description) => {
-    ...
-}
-RNYotiDocScan.startSession(id, token, successCallback, errorCallback);
-```
-
-### 3. Customizations
-On iOS, you can set the primary colors using the following API:
-```javascript
-RNYotiDocScan.setLightPrimaryColorRGB(0, 0, 0); // default: (40, 117, 188)
-RNYotiDocScan.setDarkPrimaryColorRGB(0, 0, 0); // default: (145, 190, 255)
-```
-To customize the colors on Android, please refer to its separate [documentation](https://github.com/getyoti/yoti-doc-scan-android#colours).
-
-In addition, you can choose to also specify a request code on Android:
+### 2. Optional configuration and customization
+For customization on Android, you can refer to the documentation outlined [here](https://github.com/getyoti/yoti-doc-scan-android?tab=readme-ov-file#customisation). In addition, you can choose to also set a request code:
 ```javascript
 RNYotiDocScan.setRequestCode(0); // default: 9001
 ```
 
+On iOS, the SDK expects launched sessions to contain multiple flows by default. To enable single-flow sessions, configure and include [yoti-doc-scan-react-native-configuration-ios.json](templates/yoti-doc-scan-react-native-configuration-ios.json) in your project’s target and then set the configuration as follows:
+```javascript
+RNYotiDocScan.setConfiguration({
+    bundle_identifier: "", // Optional: defaults to the main bundle identifier if not specified.
+    filename: "yoti-doc-scan-react-native-configuration-ios.json"
+});
+```
+Ensure that only one module type property is set to `true` when `single_flow` is enabled.
+
+To customize the appearance on iOS, you can configure the SDK using [yoti-doc-scan-react-native-configuration-with-theme-ios.json](templates/yoti-doc-scan-react-native-configuration-with-theme-ios.json) instead, which supports the following options for theming:
+
+- Light and dark mode color themes. We also support specifying only a primary color for each mode
+- Typography theme (system and custom fonts, font weight, size, line height multiple and kern)
+- Spacing mode (compact, regular and relaxed)
+- Shape theme (corner radius and border width)
+- Icon theme (custom vectors, system and custom SF Symbols, incl. localized ones)
+- Illustration theme (custom vectors)
+
+All customisation types are optional, and can be set independently from each other.
+
+### 3. Launch a session
+Launch a session with its required parameters using the `startSession` function.
+```javascript
+const completion = (code, description) => {
+    ...
+}
+RNYotiDocScan.startSession(id, token, completion);
+```
+
 ## Supported languages
-Yoti IDV supports the 9 languages listed in the table below, but their use is driven by the localization configuration of your target. If your target only supports a subset of our SDK's supported languages, our SDK will fall back to English on the ones your target doesn't support.
+Our SDK supports the 9 languages listed in the table below, but their use is driven by the localization configuration of your target. If your target only supports a subset of our SDK's supported languages, our SDK will fall back to English on the ones your target doesn't support.
 
 Language | Code
 :-- | :--
@@ -135,10 +142,11 @@ Russian | ru
 Spanish | es
 Turkish | tr
 
-## Error codes
+## Status codes
 Code | Description
 :-- | :--
-1000 | No error occurred. The user cancelled the session
+0 | The user completed the session
+1000 | The user cancelled the session
 2000 | Unauthorised request (wrong or expired session token)
 2001 | Session not found
 2002 | Session expired

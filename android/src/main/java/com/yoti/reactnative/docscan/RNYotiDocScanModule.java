@@ -14,8 +14,7 @@ import static com.yoti.mobile.android.yotisdkcore.YotiSdkKt.YOTI_SDK_REQUEST_COD
 public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     private final static int SESSION_SUCCESS_CODE = 0;
     private YotiSdk mYotiSdk;
-    private Callback mErrorCallback;
-    private Callback mSuccessCallback;
+    private Callback mCompletion;
     private int mRequestCode = YOTI_SDK_REQUEST_CODE;
 
     private final ActivityEventListener mActivityEventListener = new BaseActivityEventListener() {
@@ -27,10 +26,10 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             int code = mYotiSdk.getSessionStatusCode();
             String description = mYotiSdk.getSessionStatusDescription();
             if (resultCode == Activity.RESULT_OK && code == SESSION_SUCCESS_CODE) {
-                mSuccessCallback.invoke(code, description);
+                mCompletion.invoke(code, description);
                 return;
             }
-            mErrorCallback.invoke(code, description);
+            mCompletion.invoke(code, description);
         }
     };
 
@@ -46,17 +45,12 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void useCanadaService() {
+    public void setServerLocationCanada() {
         mYotiSdk.useCanadaService();
     }
 
     @ReactMethod
-    public void setLightPrimaryColorRGB(double red, double green, double blue) {
-        // Required to maintain cross-platform API compatibility.
-    }
-
-    @ReactMethod
-    public void setDarkPrimaryColorRGB(double red, double green, double blue) {
+    public void setConfiguration(ReadableMap configuration) {
         // Required to maintain cross-platform API compatibility.
     }
 
@@ -66,19 +60,18 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void startSession(String sessionId, String clientSessionToken, Callback successCallback, Callback errorCallback) {
-        mErrorCallback = errorCallback;
-        mSuccessCallback = successCallback;
+    public void startSession(String sessionID, String sessionToken, Callback completion) {
+        mCompletion = completion;
         Activity currentActivity = getCurrentActivity();
         if (currentActivity == null) {
-            mErrorCallback.invoke("E_ACTIVITY_DOES_NOT_EXIST");
+            mCompletion.invoke("E_ACTIVITY_DOES_NOT_EXIST");
             return;
         }
-        boolean success = mYotiSdk.setSessionId(sessionId).setClientSessionToken(clientSessionToken).start(currentActivity, mRequestCode);
+        boolean success = mYotiSdk.setSessionId(sessionID).setClientSessionToken(sessionToken).start(currentActivity, mRequestCode);
         if (!success) {
             int code = mYotiSdk.getSessionStatusCode();
             String description = mYotiSdk.getSessionStatusDescription();
-            mErrorCallback.invoke(code, description);
+            mCompletion.invoke(code, description);
         }
     }
 }

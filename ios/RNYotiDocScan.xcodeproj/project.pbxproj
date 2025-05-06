@@ -7,22 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20354F3E2D413CF0007F025B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F3D2D413CF0007F025B /* Theme.swift */; };
+		20354F3F2D413CF0007F025B /* ShapeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F3C2D413CF0007F025B /* ShapeTheme.swift */; };
+		20354F432D415545007F025B /* SpacingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F422D415545007F025B /* SpacingMode.swift */; };
+		20354F452D418A10007F025B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F442D418A10007F025B /* UIColor+Extension.swift */; };
+		20354F4A2D41A5BC007F025B /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F492D41A5BC007F025B /* ColorTheme.swift */; };
+		20354F522D42678C007F025B /* FileConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F512D42678C007F025B /* FileConfiguration.swift */; };
+		20354F542D42BA77007F025B /* IllustrationTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F532D42BA77007F025B /* IllustrationTheme.swift */; };
+		20354F562D42BAFF007F025B /* Illustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F552D42BAFF007F025B /* Illustration.swift */; };
+		20354F5E2D4390D3007F025B /* IconTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F5D2D4390D3007F025B /* IconTheme.swift */; };
+		20354F602D4390D8007F025B /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F5F2D4390D8007F025B /* Icon.swift */; };
+		20354F622D4395F0007F025B /* SymbolWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F612D4395F0007F025B /* SymbolWeight.swift */; };
+		20354F6A2D43E83C007F025B /* TypographyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F692D43E83C007F025B /* TypographyTheme.swift */; };
+		20354F6C2D43ED91007F025B /* TypographyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F6B2D43ED91007F025B /* TypographyStyle.swift */; };
+		20354F6E2D43FC21007F025B /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F6D2D43FC21007F025B /* FontWeight.swift */; };
+		20354F702D43FC41007F025B /* FontDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20354F6F2D43FC41007F025B /* FontDesign.swift */; };
+		205F0BA12D3BFEFB0063BF19 /* RNYotiDocScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F0BA02D3BFEFB0063BF19 /* RNYotiDocScan.swift */; };
 		20C21B632A1E794C0065E753 /* RNYotiDocScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C21B612A1E794C0065E753 /* RNYotiDocScan.m */; };
+		20C2FCC52DC4D581001A7C3E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2FCC42DC4D581001A7C3E /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20354F3C2D413CF0007F025B /* ShapeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeTheme.swift; sourceTree = "<group>"; };
+		20354F3D2D413CF0007F025B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		20354F422D415545007F025B /* SpacingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingMode.swift; sourceTree = "<group>"; };
+		20354F442D418A10007F025B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		20354F492D41A5BC007F025B /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		20354F512D42678C007F025B /* FileConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileConfiguration.swift; sourceTree = "<group>"; };
+		20354F532D42BA77007F025B /* IllustrationTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustrationTheme.swift; sourceTree = "<group>"; };
+		20354F552D42BAFF007F025B /* Illustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Illustration.swift; sourceTree = "<group>"; };
+		20354F5D2D4390D3007F025B /* IconTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTheme.swift; sourceTree = "<group>"; };
+		20354F5F2D4390D8007F025B /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		20354F612D4395F0007F025B /* SymbolWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolWeight.swift; sourceTree = "<group>"; };
+		20354F692D43E83C007F025B /* TypographyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyTheme.swift; sourceTree = "<group>"; };
+		20354F6B2D43ED91007F025B /* TypographyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyStyle.swift; sourceTree = "<group>"; };
+		20354F6D2D43FC21007F025B /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
+		20354F6F2D43FC41007F025B /* FontDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontDesign.swift; sourceTree = "<group>"; };
+		205F0B9F2D3BFEFB0063BF19 /* RNYotiDocScan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNYotiDocScan-Bridging-Header.h"; sourceTree = "<group>"; };
+		205F0BA02D3BFEFB0063BF19 /* RNYotiDocScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNYotiDocScan.swift; sourceTree = "<group>"; };
 		20C21B612A1E794C0065E753 /* RNYotiDocScan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNYotiDocScan.m; sourceTree = "<group>"; };
-		20C21B622A1E794C0065E753 /* RNYotiDocScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNYotiDocScan.h; sourceTree = "<group>"; };
+		20C2FCC42DC4D581001A7C3E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		2224907023E3E53500258582 /* libRNYotiDocScan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNYotiDocScan.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		20354F4D2D41A949007F025B /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				20354F492D41A5BC007F025B /* ColorTheme.swift */,
+				20354F6F2D43FC41007F025B /* FontDesign.swift */,
+				20354F6D2D43FC21007F025B /* FontWeight.swift */,
+				20354F5F2D4390D8007F025B /* Icon.swift */,
+				20354F5D2D4390D3007F025B /* IconTheme.swift */,
+				20354F552D42BAFF007F025B /* Illustration.swift */,
+				20354F532D42BA77007F025B /* IllustrationTheme.swift */,
+				20354F3C2D413CF0007F025B /* ShapeTheme.swift */,
+				20354F422D415545007F025B /* SpacingMode.swift */,
+				20354F612D4395F0007F025B /* SymbolWeight.swift */,
+				20354F3D2D413CF0007F025B /* Theme.swift */,
+				20354F6B2D43ED91007F025B /* TypographyStyle.swift */,
+				20354F692D43E83C007F025B /* TypographyTheme.swift */,
+				20354F442D418A10007F025B /* UIColor+Extension.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		2224906723E3E53500258582 = {
 			isa = PBXGroup;
 			children = (
-				20C21B622A1E794C0065E753 /* RNYotiDocScan.h */,
+				205F0B9F2D3BFEFB0063BF19 /* RNYotiDocScan-Bridging-Header.h */,
 				20C21B612A1E794C0065E753 /* RNYotiDocScan.m */,
+				205F0BA02D3BFEFB0063BF19 /* RNYotiDocScan.swift */,
+				20C2FCC42DC4D581001A7C3E /* Configuration.swift */,
+				20354F512D42678C007F025B /* FileConfiguration.swift */,
 				2224907123E3E53500258582 /* Products */,
+				20354F4D2D41A949007F025B /* Theme */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,11 +118,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = "Yoti Ltd";
 				TargetAttributes = {
 					2224906F23E3E53500258582 = {
 						CreatedOnToolsVersion = 11.2;
+						LastSwiftMigration = 1620;
 					};
 				};
 			};
@@ -90,6 +150,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20354F6C2D43ED91007F025B /* TypographyStyle.swift in Sources */,
+				20354F432D415545007F025B /* SpacingMode.swift in Sources */,
+				20354F4A2D41A5BC007F025B /* ColorTheme.swift in Sources */,
+				20354F542D42BA77007F025B /* IllustrationTheme.swift in Sources */,
+				20354F562D42BAFF007F025B /* Illustration.swift in Sources */,
+				20354F6A2D43E83C007F025B /* TypographyTheme.swift in Sources */,
+				20354F702D43FC41007F025B /* FontDesign.swift in Sources */,
+				205F0BA12D3BFEFB0063BF19 /* RNYotiDocScan.swift in Sources */,
+				20354F3E2D413CF0007F025B /* Theme.swift in Sources */,
+				20354F602D4390D8007F025B /* Icon.swift in Sources */,
+				20354F5E2D4390D3007F025B /* IconTheme.swift in Sources */,
+				20354F6E2D43FC21007F025B /* FontWeight.swift in Sources */,
+				20C2FCC52DC4D581001A7C3E /* Configuration.swift in Sources */,
+				20354F452D418A10007F025B /* UIColor+Extension.swift in Sources */,
+				20354F3F2D413CF0007F025B /* ShapeTheme.swift in Sources */,
+				20354F522D42678C007F025B /* FileConfiguration.swift in Sources */,
+				20354F622D4395F0007F025B /* SymbolWeight.swift in Sources */,
 				20C21B632A1E794C0065E753 /* RNYotiDocScan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +282,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -216,6 +294,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNYotiDocScan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -227,6 +307,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNYotiDocScan-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
