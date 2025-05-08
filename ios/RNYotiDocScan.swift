@@ -26,16 +26,11 @@ import YotiSDKFaceCapture
     private var sessionToken = ""
     private var completion: RCTResponseSenderBlock?
     private var _configuration: Configuration?
-    private var _serverLocation = YotiSDKServerLocation.unitedKingdom
 }
 
 extension RNYotiDocScan {
     @objc static func requiresMainQueueSetup() -> Bool {
         false
-    }
-
-    @objc func setServerLocationCanada() {
-        _serverLocation = .canada
     }
 
     @objc func setConfiguration(_ configuration: Dictionary<String, String>) {
@@ -78,10 +73,6 @@ extension RNYotiDocScan: YotiSDKDataSource, YotiSDKDelegate {
             moduleTypes: moduleTypes(),
             theme: theme()
         )
-    }
-
-    func serverLocation() -> YotiSDKServerLocation {
-        _serverLocation
     }
 
     func isReactNativeClient() -> Bool {

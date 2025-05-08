@@ -45,11 +45,6 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void setServerLocationCanada() {
-        mYotiSdk.useCanadaService();
-    }
-
-    @ReactMethod
     public void setConfiguration(ReadableMap configuration) {
         // Required to maintain cross-platform API compatibility.
     }
