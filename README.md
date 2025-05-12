@@ -119,12 +119,12 @@ To customize the appearance on iOS, you can configure the SDK using [yoti-doc-sc
 All customisation types are optional, and can be set independently from each other.
 
 ### 3. Launch a session
-Launch a session with its required parameters using the `startSession` function.
+Launch a session with its required parameters using the `start` function.
 ```javascript
 const completion = (code, description) => {
     ...
 }
-RNYotiDocScan.startSession(id, token, completion);
+RNYotiDocScan.start(id, token, completion);
 ```
 
 ## Supported languages
