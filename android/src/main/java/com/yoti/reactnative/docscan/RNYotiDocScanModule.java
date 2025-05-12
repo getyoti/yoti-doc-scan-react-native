@@ -7,6 +7,7 @@ import com.facebook.react.bridge.BaseActivityEventListener;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReactMethod;
 import com.yoti.mobile.android.yotisdkcore.YotiSdk;
 import static com.yoti.mobile.android.yotisdkcore.YotiSdkKt.YOTI_SDK_REQUEST_CODE;
@@ -55,7 +56,7 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void startSession(String sessionID, String sessionToken, Callback completion) {
+    public void start(String sessionID, String sessionToken, Callback completion) {
         mCompletion = completion;
         Activity currentActivity = getCurrentActivity();
         if (currentActivity == null) {
