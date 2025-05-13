@@ -3,7 +3,7 @@ buildscript {
         minSdkVersion = 21
         compileSdkVersion = 33
         targetSdkVersion = 33
-        yotiSdkVersion = "3.5.0"
+        yotiSdkVersion = "4.0.0"
     }
     repositories {
         google()
@@ -30,7 +30,7 @@ allprojects {
         }
         mavenCentral()
         maven {
-            url 'https://maven.microblink.com'
+            url 'https://maven.regulaforensics.com/RegulaDocumentReader'
         }
     }
 }

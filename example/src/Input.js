@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import {StyleSheet, Text, TextInput, View} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,8 +14,14 @@ const styles = StyleSheet.create({
     marginRight: 37,
     paddingVertical: 10,
   },
-  iconWrapper: {position: 'absolute', right: 10},
-  icon: {color: '#39a2f7', fontSize: 20},
+  iconWrapper: {
+    position: 'absolute',
+    right: 10,
+  },
+  icon: {
+    color: '#39a2f7',
+    fontSize: 20,
+  },
 });
 
 function Input({

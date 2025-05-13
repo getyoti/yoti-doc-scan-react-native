@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
-import Button from './components/Button'
-import Header from './components/Header';
-import Input from './components/Input';
-import InputSpacer from './components/InputSpacer';
+import React, {useState} from 'react';
+import {StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
+import Button from './Button'
+import Header from './Header';
+import Input from './Input';
+import InputSpacer from './InputSpacer';
 import RNYotiDocScan from '@getyoti/yoti-doc-scan-react-native';
 
 const styles = StyleSheet.create({
@@ -24,17 +24,24 @@ const styles = StyleSheet.create({
   },
   intro: {
     color: '#475056',
-    fontSize: 12,
-    marginBottom: 15,
+    fontSize: 16,
+    marginTop: 5,
+    marginBottom: 5,
   },
-  results: {flexGrow: 1, paddingHorizontal: 20},
+  results: {
+    flexGrow: 1,
+    paddingHorizontal: 20,
+  },
   resultsContainer: {
     flex: 1,
     width: '100%',
     alignSelf: 'center',
     marginBottom: 30,
   },
-  resultsHeader: {paddingTop: 5, width: 200},
+  resultsHeader: {
+    paddingTop: 5,
+    width: 200,
+  },
   resultsHeaderText: {
     textAlign: 'center',
     color: 'white',
@@ -42,27 +49,32 @@ const styles = StyleSheet.create({
   resultTitle: {
     color: '#444',
     fontSize: 16,
-    marginBottom: 0,
-  },
-  resultDescription: {
-    color: '#475056',
-    fontSize: 8,
-    marginTop: 15,
+    marginTop: 4,
   },
   resultText: {
     color: '#444',
-    fontSize: 12,
-    marginBottom: 15,
+    fontSize: 14,
+    marginTop: 8,
+    marginBottom: 4,
   },
-  resultRow: {flexDirection: 'row'},
-  resultRowIcon: {fontSize: 12, marginTop: 5, marginRight: 5},
+  resultRow: {
+    flexDirection: 'row',
+  },
+  resultRowIcon: {
+    fontSize: 12,
+    marginTop: 5,
+    marginRight: 5,
+  },
   resultsScrollViewContainer: {
     backgroundColor: 'white',
     borderWidth: 3,
     paddingVertical: 10,
     paddingHorizontal: 20,
   },
-  gutter: {paddingHorizontal: 20, paddingVertical: 20},
+  gutter: {
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+  },
   yotiButton: {
     height: 60,
     alignSelf: 'center',
@@ -80,16 +92,8 @@ const styles = StyleSheet.create({
 export default () => {
   const [code, setCode] = useState(null);
   const [description, setDescription] = useState(null);
-  const [sessionId, setSessionId] = useState('');
-  const [clientSessionToken, setClientSessionToken] = useState('');
-  const showYotiButton = sessionId.length > 0 && clientSessionToken.length > 0
-
-  useEffect(() => {
-    if (!showYotiButton) {
-      setCode(null)
-      setDescription(null)
-    }
-  }, [showYotiButton])
+  const [sessionID, setSessionID] = useState('');
+  const [sessionToken, setSessionToken] = useState('');
 
   return (
     <>
@@ -98,48 +102,39 @@ export default () => {
         <View style={{flex: 1, justifyContent: 'space-between', width: '100%'}}>
           <View style={styles.gutter}>
             <Text style={styles.intro}>
-              Please fill in the required information below, and tap the button once you are done.
+              Fill in the session ID and token, then start the session.
             </Text>
           </View>
           <View style={styles.results}>
             {code != null &&
-              <Results code={code} description={description} />
+              <Result code={code} description={description} />
             }
           </View>
           <View>
             <View style={styles.inputsTopGutter}>
               <Input
                 placeholder="Session ID"
-                value={sessionId}
-                onChangeText={setSessionId}
+                value={sessionID}
+                onChangeText={setSessionID}
               />
               <InputSpacer />
               <Input
                 placeholder="Session token"
-                value={clientSessionToken}
-                onChangeText={setClientSessionToken}
+                value={sessionToken}
+                onChangeText={setSessionToken}
               />
               <InputSpacer />
             </View>
-
             <View style={styles.yotiButton}>
-              {showYotiButton && (
-                <Button
-                  onPress={() => {
-                    const onSuccess = (code, description) => {
-                      setCode(code)
-                      setDescription(description)
-                    }
-                    const onError = (code, description) => {
-                      setCode(code)
-                      setDescription(description)
-                    }
-                    RNYotiDocScan.setRequestCode(9999); // Optional request code for Android
-                    RNYotiDocScan.startSession(sessionId, clientSessionToken, onSuccess, onError);
-                  }}
-                  title="Start session"
-                />
-              )}
+              <Button
+                onPress={() => {
+                  RNYotiDocScan.start(sessionID, sessionToken, (code, description) => {
+                    setCode(code);
+                    setDescription(description);
+                  });
+                }}
+                title="Start"
+              />
             </View>
           </View>
         </View>
@@ -148,7 +143,7 @@ export default () => {
   );
 };
 
-function Results({code, description}) {
+function Result({code, description}) {
   const isSuccessOutcome = code == 0;
   return (
     <View style={styles.resultsContainer}>
@@ -174,10 +169,7 @@ function Results({code, description}) {
         <ScrollView>
           <View style={styles.resultRow}>
             <View>
-              <Text style={styles.resultTitle}>Code: {code}</Text>
-              <Text style={styles.resultDescription}>
-                Description:
-              </Text>
+              <Text style={styles.resultTitle}>Status code: {code}</Text>
               <Text style={styles.resultText}>
                 {description != null ? description : 'No description was returned.'}
               </Text>

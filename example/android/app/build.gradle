@@ -76,7 +76,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.facebook.react:react-native:0.68.5"
+    implementation "com.facebook.react:react-native:0.70.0"
     implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan:${rootProject.ext.yotiSdkVersion}"
     // implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan-slim:${rootProject.ext.yotiSdkVersion}"
     //implementation "com.yoti.mobile.android.sdk:yoti-sdk-doc-scan-sup:${rootProject.ext.yotiSdkVersion}"
