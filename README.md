@@ -124,7 +124,7 @@ Launch a session with its required parameters using the `start` function.
 const completion = (code, description) => {
     ...
 }
-RNYotiDocScan.start(id, token, completion);
+RNYotiDocScan.start(sessionID, sessionToken, completion);
 ```
 
 ## Supported languages
