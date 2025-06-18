@@ -5,6 +5,8 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
+    namespace "com.yoti.reactnative.docscan"
+
     compileSdk safeExtGet('compileSdkVersion', 33)
 
     defaultConfig {

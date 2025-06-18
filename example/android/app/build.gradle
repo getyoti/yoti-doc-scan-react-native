@@ -14,7 +14,9 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false);
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    namespace "com.example"
+
+    compileSdk rootProject.ext.compileSdkVersion
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -71,6 +73,9 @@ android {
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
         exclude 'META-INF/*.kotlin_module'
         exclude "**/kotlin/**"
+    }
+    buildFeatures {
+        buildConfig true
     }
 }
 
