@@ -17,7 +17,7 @@ To integrate with Yoti IDV, a working infrastructure is needed (see [developers.
 Start your integration by adding the following dependency to your `package.json` file:
 ```json
 "dependencies": {
-    "@getyoti/yoti-doc-scan-react-native": "^5.0.0"
+    "@getyoti/yoti-doc-scan-react-native": "^5.0.1"
 }
 ```
 
