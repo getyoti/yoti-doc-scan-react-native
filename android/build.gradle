@@ -5,13 +5,15 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdk safeExtGet('compileSdkVersion', 33)
+    namespace "com.yoti.reactnative.docscan"
+
+    compileSdk safeExtGet('compileSdkVersion', 34)
 
     defaultConfig {
         minSdkVersion safeExtGet('minSdkVersion', 21)
-        targetSdkVersion safeExtGet('targetSdkVersion', 33)
-        versionCode 500
-        versionName "5.0.0"
+        targetSdkVersion safeExtGet('targetSdkVersion', 34)
+        versionCode 501
+        versionName "5.0.1"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
