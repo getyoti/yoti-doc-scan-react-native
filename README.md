@@ -11,13 +11,13 @@ To integrate with Yoti IDV, a working infrastructure is needed (see [developers.
 
 ## Requirements
 - [Android SDK 4+](https://github.com/getyoti/yoti-doc-scan-android/releases)
-- [iOS SDK 8+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
+- [iOS SDK 7+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
 
 ## Integration
 Start your integration by adding the following dependency to your `package.json` file:
 ```json
 "dependencies": {
-    "@getyoti/yoti-doc-scan-react-native": "^6.0.0"
+    "@getyoti/yoti-doc-scan-react-native": "^5.0.1"
 }
 ```
 
@@ -106,8 +106,6 @@ RNYotiDocScan.setConfiguration({
 });
 ```
 Ensure that only one module type property is set to `true` when `single_flow` is enabled.
-
-For disabling edge-detecting auto-captures of identity documents, set `disable_identity_document_capture_edge_detection` to `true` in the configuration. This option will take effect only if you've not included `YotiDocumentScan` in your target as part of your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html).
 
 To customize the appearance on iOS, you can configure the SDK using [yoti-doc-scan-react-native-configuration-with-theme-ios.json](templates/yoti-doc-scan-react-native-configuration-with-theme-ios.json) instead, which supports the following options for theming:
 
