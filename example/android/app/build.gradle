@@ -104,3 +104,10 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.core:core:1.8.0'
+        force 'androidx.core:core-ktx:1.8.0'
+    }
+}
