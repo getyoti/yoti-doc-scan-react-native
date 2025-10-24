@@ -8,6 +8,7 @@ struct Configuration: Decodable {
     let includeSupplementaryDocumentModuleType: Bool?
     let includeFaceTecModuleType: Bool?
     let includeFaceCaptureModuleType: Bool?
+    let disableIdentityDocumentCaptureEdgeDetection: Bool?
     let theme: Theme?
 
     init(from decoder: Decoder) throws {
@@ -17,6 +18,7 @@ struct Configuration: Decodable {
         includeSupplementaryDocumentModuleType = try container.decodeIfPresent(Bool.self, forKey: .includeSupplementaryDocumentModuleType)
         includeFaceTecModuleType = try container.decodeIfPresent(Bool.self, forKey: .includeFaceTecModuleType)
         includeFaceCaptureModuleType = try container.decodeIfPresent(Bool.self, forKey: .includeFaceCaptureModuleType)
+        disableIdentityDocumentCaptureEdgeDetection = try container.decodeIfPresent(Bool.self, forKey: .disableIdentityDocumentCaptureEdgeDetection)
         theme = try container.decodeIfPresent(Theme.self, forKey: .theme)
     }
 
@@ -26,6 +28,7 @@ struct Configuration: Decodable {
         case includeSupplementaryDocumentModuleType = "include_supplementary_document_module_type"
         case includeFaceTecModuleType = "include_facetec_module_type"
         case includeFaceCaptureModuleType = "include_face_capture_module_type"
+        case disableIdentityDocumentCaptureEdgeDetection = "disable_identity_document_capture_edge_detection"
         case theme
     }
 }

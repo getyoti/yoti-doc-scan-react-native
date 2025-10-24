@@ -5,7 +5,7 @@
     "license": "https://www.yoti.com/terms/identity-verification",
     "author": "Yoti Ltd",
     "main": "RNYotiDocScan.js",
-    "version": "5.0.1",
+    "version": "6.0.0-alpha.1",
     "peerDependencies": {
       "react": ">=18.0.0",
       "react-native": ">=0.70.0"
