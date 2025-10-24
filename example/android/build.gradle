@@ -1,8 +1,8 @@
 buildscript {
     ext {
         minSdkVersion = 21
-        compileSdkVersion = 34
-        targetSdkVersion = 34
+        compileSdkVersion = 35
+        targetSdkVersion = 35
         yotiSdkVersion = "4.2.1"
     }
     repositories {
