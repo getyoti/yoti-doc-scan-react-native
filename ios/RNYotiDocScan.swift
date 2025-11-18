@@ -71,7 +71,6 @@ extension RNYotiDocScan: YotiSDKDataSource, YotiSDKDelegate {
             sessionToken: sessionToken,
             singleFlow: _configuration?.singleFlow ?? false,
             moduleTypes: moduleTypes(),
-            options: options(),
             theme: theme()
         )
     }
@@ -116,14 +115,6 @@ fileprivate extension RNYotiDocScan {
         }
         #endif
         return moduleTypes
-    }
-
-    func options() -> [YotiSDKOption]? {
-        if _configuration?.disableIdentityDocumentCaptureEdgeDetection == true {
-            return [.disableIdentityDocumentCaptureEdgeDetection]
-        } else {
-            return nil
-        }
     }
 
     func theme() -> YotiSDKTheme? {

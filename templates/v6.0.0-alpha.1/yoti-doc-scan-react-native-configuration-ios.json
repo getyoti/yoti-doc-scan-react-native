@@ -1,8 +1,0 @@
-{
-    "single_flow": true,
-    "include_identity_document_module_type": true,
-    "include_supplementary_document_module_type": false,
-    "include_facetec_module_type": false,
-    "include_face_capture_module_type": false,
-    "disable_identity_document_capture_edge_detection": false
-}

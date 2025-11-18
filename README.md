@@ -17,7 +17,7 @@ To integrate with Yoti IDV, a working infrastructure is needed (see [developers.
 Start your integration by adding the following dependency to your `package.json` file:
 ```json
 "dependencies": {
-    "@getyoti/yoti-doc-scan-react-native": "^5.0.1"
+    "@getyoti/yoti-doc-scan-react-native": "^5.0.2"
 }
 ```
 
@@ -98,7 +98,7 @@ For customization on Android, you can refer to the documentation outlined [here]
 RNYotiDocScan.setRequestCode(0); // default: 9001
 ```
 
-On iOS, the SDK expects a launched session to contain multiple flows by default. To enable a single-flow session, configure and include [yoti-doc-scan-react-native-configuration-ios.json](templates/yoti-doc-scan-react-native-configuration-ios.json) in your project’s target and then set the configuration as follows:
+On iOS, the SDK expects launched sessions to contain multiple flows by default. To enable single-flow sessions, configure and include [yoti-doc-scan-react-native-configuration-ios.json](templates/yoti-doc-scan-react-native-configuration-ios.json) in your project’s target and then set the configuration as follows:
 ```javascript
 RNYotiDocScan.setConfiguration({
     bundle_identifier: "", // Optional: defaults to the main bundle identifier if not specified.
