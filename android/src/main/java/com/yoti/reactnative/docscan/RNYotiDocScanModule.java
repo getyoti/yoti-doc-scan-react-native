@@ -10,11 +10,15 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReactMethod;
 import com.yoti.mobile.android.yotisdkcore.YotiSdk;
+
+import javax.annotation.Nullable;
+
 import static com.yoti.mobile.android.yotisdkcore.YotiSdkKt.YOTI_SDK_REQUEST_CODE;
 
 public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
     private final static int SESSION_SUCCESS_CODE = 0;
     private YotiSdk mYotiSdk;
+    @Nullable
     private Callback mCompletion;
     private int mRequestCode = YOTI_SDK_REQUEST_CODE;
 
@@ -27,10 +31,10 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
             int code = mYotiSdk.getSessionStatusCode();
             String description = mYotiSdk.getSessionStatusDescription();
             if (resultCode == Activity.RESULT_OK && code == SESSION_SUCCESS_CODE) {
-                mCompletion.invoke(code, description);
+                invokeCompletion(code, description);
                 return;
             }
-            mCompletion.invoke(code, description);
+            invokeCompletion(code, description);
         }
     };
 
@@ -60,14 +64,21 @@ public class RNYotiDocScanModule extends ReactContextBaseJavaModule {
         mCompletion = completion;
         Activity currentActivity = getCurrentActivity();
         if (currentActivity == null) {
-            mCompletion.invoke("E_ACTIVITY_DOES_NOT_EXIST");
+            invokeCompletion("E_ACTIVITY_DOES_NOT_EXIST");
             return;
         }
         boolean success = mYotiSdk.setSessionId(sessionID).setClientSessionToken(sessionToken).start(currentActivity, mRequestCode);
         if (!success) {
             int code = mYotiSdk.getSessionStatusCode();
             String description = mYotiSdk.getSessionStatusDescription();
-            mCompletion.invoke(code, description);
+            invokeCompletion(code, description);
+        }
+    }
+
+    private void invokeCompletion(Object... args) {
+        if (mCompletion != null) {
+            mCompletion.invoke(args);
+            mCompletion = null;
         }
     }
 }
