@@ -7,8 +7,8 @@
     "main": "RNYotiDocScan.js",
     "version": "5.0.2",
     "peerDependencies": {
-      "react": ">=18.0.0",
-      "react-native": ">=0.70.0"
+      "react": ">=19.0.0",
+      "react-native": ">=0.78.3"
     },
     "repository": {
         "type": "git",
@@ -21,3 +21,4 @@
         "yoti-doc-scan-react-native.podspec"
     ]
 }
+
