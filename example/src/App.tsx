@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Button from './Button';
 import Header from './Header';
 import Input from './Input';
@@ -101,7 +102,7 @@ export default function App() {
   const [sessionToken, setSessionToken] = useState('');
 
   return (
-    <>
+    <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <Header />
         <View style={{flex: 1, justifyContent: 'space-between', width: '100%'}}>
@@ -138,7 +139,7 @@ export default function App() {
           </View>
         </View>
       </SafeAreaView>
-    </>
+    </SafeAreaProvider>
   );
 }
 
