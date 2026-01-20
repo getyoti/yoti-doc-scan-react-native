@@ -5,6 +5,7 @@
     "include_facetec_module_type": false,
     "include_face_capture_module_type": false,
     "disable_identity_document_capture_edge_detection": false,
+    "enable_relaxed_face_capture_lighting_requirement": false,
     "theme": {
         "light_primary_color": "#2875bc",
         "dark_primary_color": "#91beff",

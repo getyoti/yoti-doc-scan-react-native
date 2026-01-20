@@ -119,11 +119,14 @@ fileprivate extension RNYotiDocScan {
     }
 
     func options() -> [YotiSDKOption]? {
+        var options = [YotiSDKOption]()
         if _configuration?.disableIdentityDocumentCaptureEdgeDetection == true {
-            return [.disableIdentityDocumentCaptureEdgeDetection]
-        } else {
-            return nil
+            options.insert(.disableIdentityDocumentCaptureEdgeDetection, at: options.count)
         }
+        if _configuration?.enableRelaxedFaceCaptureLightingRequirement == true {
+            options.insert(.enableRelaxedFaceCaptureLightingRequirement, at: options.count)
+        }
+        return options.isEmpty ? nil : options
     }
 
     func theme() -> YotiSDKTheme? {
