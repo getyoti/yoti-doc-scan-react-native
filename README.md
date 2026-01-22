@@ -11,7 +11,7 @@ To integrate with Yoti IDV, a working infrastructure is needed (see [developers.
 
 ## Requirements
 - [Android SDK 4+](https://github.com/getyoti/yoti-doc-scan-android/releases)
-- [iOS SDK 7+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
+- [iOS SDK 8+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
 
 ## Integration
 Start your integration by adding the following dependency to your `package.json` file:
