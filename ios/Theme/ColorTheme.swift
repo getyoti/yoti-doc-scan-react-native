@@ -22,6 +22,7 @@ struct ColorTheme: YotiSDKColorTheme, Decodable {
     let borderCritical: UIColor
     let borderEmphasis2: UIColor
     let icon: UIColor
+    let icon2: UIColor
     let icon3: UIColor
     let iconEmphasis: UIColor
     let iconWarning: UIColor
@@ -53,6 +54,7 @@ struct ColorTheme: YotiSDKColorTheme, Decodable {
         let borderCritical = try container.decode(String.self, forKey: .borderCritical)
         let borderEmphasis2 = try container.decode(String.self, forKey: .borderEmphasis2)
         let icon = try container.decode(String.self, forKey: .icon)
+        let icon2 = try container.decode(String.self, forKey: .icon2)
         let icon3 = try container.decode(String.self, forKey: .icon3)
         let iconEmphasis = try container.decode(String.self, forKey: .iconEmphasis)
         let iconWarning = try container.decode(String.self, forKey: .iconWarning)
@@ -81,6 +83,7 @@ struct ColorTheme: YotiSDKColorTheme, Decodable {
         self.borderCritical = UIColor(hexString: borderCritical)
         self.borderEmphasis2 = UIColor(hexString: borderEmphasis2)
         self.icon = UIColor(hexString: icon)
+        self.icon2 = UIColor(hexString: icon2)
         self.icon3 = UIColor(hexString: icon3)
         self.iconEmphasis = UIColor(hexString: iconEmphasis)
         self.iconWarning = UIColor(hexString: iconWarning)
@@ -112,6 +115,7 @@ struct ColorTheme: YotiSDKColorTheme, Decodable {
         case borderCritical = "border_critical"
         case borderEmphasis2 = "border_emphasis2"
         case icon
+        case icon2
         case icon3
         case iconEmphasis = "icon_emphasis"
         case iconWarning = "icon_warning"
