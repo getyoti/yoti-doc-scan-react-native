@@ -4,6 +4,8 @@
     "include_supplementary_document_module_type": false,
     "include_facetec_module_type": false,
     "include_face_capture_module_type": false,
+    "disable_identity_document_capture_edge_detection": false,
+    "enable_relaxed_face_capture_lighting_requirement": false,
     "theme": {
         "light_primary_color": "#2875bc",
         "dark_primary_color": "#91beff",
@@ -24,6 +26,7 @@
             "border_critical": "#d5332e",
             "border_emphasis2": "#546072",
             "icon": "#333b40",
+            "icon2": "#546072",
             "icon3": "#9ba5b4",
             "icon_emphasis": "#ffffff",
             "icon_warning": "#634514",
@@ -54,6 +57,7 @@
             "border_critical": "#ffa594",
             "border_emphasis2": "#546072",
             "icon": "#ffffff",
+            "icon2": "#f2f4f6",
             "icon3": "#b5bdc8",
             "icon_emphasis": "#111111",
             "icon_warning": "#ffe9e4",
@@ -288,6 +292,13 @@
                 "locale_identifier": ""
             },
             "face": {
+                "bundle_identifier": "",
+                "custom_name": "",
+                "system_name": "",
+                "weight": "",
+                "locale_identifier": ""
+            },
+            "help": {
                 "bundle_identifier": "",
                 "custom_name": "",
                 "system_name": "",

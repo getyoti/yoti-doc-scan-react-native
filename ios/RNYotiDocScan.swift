@@ -71,6 +71,7 @@ extension RNYotiDocScan: YotiSDKDataSource, YotiSDKDelegate {
             sessionToken: sessionToken,
             singleFlow: _configuration?.singleFlow ?? false,
             moduleTypes: moduleTypes(),
+            options: options(),
             theme: theme()
         )
     }
@@ -115,6 +116,17 @@ fileprivate extension RNYotiDocScan {
         }
         #endif
         return moduleTypes
+    }
+
+    func options() -> [YotiSDKOption]? {
+        var options = [YotiSDKOption]()
+        if _configuration?.disableIdentityDocumentCaptureEdgeDetection == true {
+            options.insert(.disableIdentityDocumentCaptureEdgeDetection, at: options.count)
+        }
+        if _configuration?.enableRelaxedFaceCaptureLightingRequirement == true {
+            options.insert(.enableRelaxedFaceCaptureLightingRequirement, at: options.count)
+        }
+        return options.isEmpty ? nil : options
     }
 
     func theme() -> YotiSDKTheme? {
