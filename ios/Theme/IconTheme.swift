@@ -16,7 +16,6 @@ struct IconTheme: YotiSDKIconTheme, Decodable {
     var eye: YotiSDKIcon?
     var exclamationmark: YotiSDKIcon?
     var face: YotiSDKIcon?
-    var help: YotiSDKIcon?
     var identityDocumentCapture: YotiSDKIcon?
     var info: YotiSDKIcon?
     var largeLeftChevron: YotiSDKIcon?
@@ -60,9 +59,6 @@ struct IconTheme: YotiSDKIconTheme, Decodable {
         }
         if let icon = try container.decodeIfPresent(Icon.self, forKey: .face) {
             face = YotiSDKIcon(icon)
-        }
-        if let icon = try container.decodeIfPresent(Icon.self, forKey: .help) {
-            help = YotiSDKIcon(icon)
         }
         if let icon = try container.decodeIfPresent(Icon.self, forKey: .identityDocumentCapture) {
             identityDocumentCapture = YotiSDKIcon(icon)
@@ -110,7 +106,6 @@ struct IconTheme: YotiSDKIconTheme, Decodable {
         case eye
         case exclamationmark
         case face
-        case help
         case identityDocumentCapture = "identity_document_capture"
         case info
         case largeLeftChevron = "large_left_chevron"

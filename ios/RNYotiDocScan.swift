@@ -71,7 +71,6 @@ extension RNYotiDocScan: YotiSDKDataSource, YotiSDKDelegate {
             sessionToken: sessionToken,
             singleFlow: _configuration?.singleFlow ?? false,
             moduleTypes: moduleTypes(),
-            options: options(),
             theme: theme()
         )
     }
