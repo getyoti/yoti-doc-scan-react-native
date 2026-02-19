@@ -7,8 +7,8 @@
     "main": "RNYotiDocScan.js",
     "version": "7.0.0",
     "peerDependencies": {
-      "react": ">=19.0.0",
-      "react-native": ">=0.78.3"
+      "react": ">=19.1.0",
+      "react-native": ">=0.80.3"
     },
     "repository": {
         "type": "git",
