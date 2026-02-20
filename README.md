@@ -17,7 +17,7 @@ To integrate with Yoti IDV, a working infrastructure is needed (see [developers.
 Start your integration by adding the following dependency to your `package.json` file:
 ```json
 "dependencies": {
-    "@getyoti/yoti-doc-scan-react-native": "^5.0.2"
+    "@getyoti/yoti-doc-scan-react-native": "^7.0.0"
 }
 ```
 
@@ -26,7 +26,7 @@ Continuing with your integration for Android, add the following property and rep
 ```groovy
 buildscript {
     ext {
-        yotiSdkVersion = "4.1.0"
+        yotiSdkVersion = "4.3.0"
     }
 }
 allprojects {
@@ -70,7 +70,7 @@ To continue your integration with iOS, you should add the following to your [`Po
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 
-platform :ios, '13.0'
+platform :ios, '15.1'
 
 target 'TargetName' do
   config = use_native_modules!
