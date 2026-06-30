@@ -11,13 +11,13 @@ To integrate with Yoti IDV, a working infrastructure is needed (see [developers.
 
 ## Requirements
 - [Android SDK 4+](https://github.com/getyoti/yoti-doc-scan-android/releases)
-- [iOS SDK 8+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
+- [iOS SDK 9+](https://github.com/getyoti/yoti-doc-scan-ios/releases)
 
 ## Integration
 Start your integration by adding the following dependency to your `package.json` file:
 ```json
 "dependencies": {
-    "@getyoti/yoti-doc-scan-react-native": "^7.0.0"
+    "@getyoti/yoti-doc-scan-react-native": "^8.0.0"
 }
 ```
 
@@ -77,12 +77,17 @@ target 'TargetName' do
   use_react_native!(:path => config[:reactNativePath])
   use_frameworks!
   use_native_modules!
-  pod 'YotiDocumentScan'                // Include if `YotiSDKIdentityDocument` is included and to support identity document OCR
-  pod 'YotiNFC'                         // Include if `YotiSDKIdentityDocument` is included and to support identity document NFC
-  pod 'YotiSDKIdentityDocument'         // Optional
-  pod 'YotiSDKSupplementaryDocument'    // Optional
-  pod 'YotiSDKFaceTec'                  // Optional
-  pod 'YotiSDKFaceCapture'              // Optional
+  pod 'YotiDocumentScan'                # Include if `YotiSDKIdentityDocument` is included and to support identity document OCR
+  pod 'YotiNFC'                         # Include if `YotiSDKIdentityDocument` is included and to support identity document NFC
+  pod 'YotiSDKIdentityDocument'         # Optional
+  pod 'YotiSDKSupplementaryDocument'    # Optional
+  pod 'YotiSDKFaceTec'                  # Optional
+  pod 'YotiSDKFaceCapture'              # Optional
+
+  # If your target includes `YotiSDKFaceTec`, then you must also provide `FaceTecSDK` per build configuration.
+  # ENV['YOTI_FACETEC_VERSION'] = '9.0.0' # Uncomment to pin FaceTec to a specific 'yoti-doc-scan-ios' version (defaults to latest)
+  pod 'FaceTecSDK', :podspec => '../node_modules/@getyoti/yoti-doc-scan-react-native/ios/Podspecs/FaceTecSDK.podspec', :configurations => ['Release']
+  pod 'FaceTecSDKForDevelopment', :podspec => '../node_modules/@getyoti/yoti-doc-scan-react-native/ios/Podspecs/FaceTecSDKForDevelopment.podspec', :configurations => ['Debug']
 end
 ```
 In addition, you should [modify the properties and capabilities of your project's target](https://github.com/getyoti/yoti-doc-scan-ios?tab=readme-ov-file#5-modify-the-properties-and-capabilities-of-your-projects-target).
@@ -98,7 +103,7 @@ For customization on Android, you can refer to the documentation outlined [here]
 RNYotiDocScan.setRequestCode(0); // default: 9001
 ```
 
-On iOS, the SDK expects a launched session to contain multiple flows by default. To enable a single-flow session, configure and include [yoti-doc-scan-react-native-configuration-ios.json](templates/yoti-doc-scan-react-native-configuration-ios.json) in your project’s target and then set the configuration as follows:
+On iOS, the SDK expects a launched session to contain multiple flows by default. To enable a single-flow session, configure and include [yoti-doc-scan-react-native-configuration-ios.json](ios/Templates/yoti-doc-scan-react-native-configuration-ios.json) in your project’s target and then set the configuration as follows:
 ```javascript
 RNYotiDocScan.setConfiguration({
     bundle_identifier: "", // Optional: defaults to the main bundle identifier if not specified.
@@ -107,7 +112,7 @@ RNYotiDocScan.setConfiguration({
 ```
 Ensure that only one module type property is set to `true` when `single_flow` is enabled.
 
-To customize the appearance on iOS, you can configure the SDK using [yoti-doc-scan-react-native-configuration-with-theme-ios.json](templates/yoti-doc-scan-react-native-configuration-with-theme-ios.json) instead, which supports the following options for theming:
+To customize the appearance on iOS, you can configure the SDK using [yoti-doc-scan-react-native-configuration-with-theme-ios.json](ios/Templates/yoti-doc-scan-react-native-configuration-with-theme-ios.json) instead, which supports the following options for theming:
 
 - Light and dark mode color themes. We also support specifying only a primary color for each mode
 - Typography theme (system and custom fonts, font weight, size, line height multiple and kern)

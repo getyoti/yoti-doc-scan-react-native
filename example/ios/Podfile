@@ -25,6 +25,9 @@ target 'Demo' do
   pod 'YotiNFC'
   pod 'YotiSDKIdentityDocument'
   pod 'YotiSDKFaceTec'
+  # ENV['YOTI_FACETEC_VERSION'] = '9.0.0' # Uncomment to pin FaceTec to a specific 'yoti-doc-scan-ios' version (defaults to latest)
+  pod 'FaceTecSDK', :podspec => '../node_modules/@getyoti/yoti-doc-scan-react-native/ios/Podspecs/FaceTecSDK.podspec', :configurations => ['Release']
+  pod 'FaceTecSDKForDevelopment', :podspec => '../node_modules/@getyoti/yoti-doc-scan-react-native/ios/Podspecs/FaceTecSDKForDevelopment.podspec', :configurations => ['Debug']
 
   post_install do |installer|
     # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
@@ -34,7 +37,12 @@ target 'Demo' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+    installer.pods_project.targets.each do |target|
+        if target.name == 'fmt'
+          target.build_configurations.each do |config|
+            config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+          end
+        end
+    end
   end
 end
-
-
