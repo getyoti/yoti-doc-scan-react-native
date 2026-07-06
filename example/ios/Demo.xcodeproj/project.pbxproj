@@ -185,8 +185,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FaceTecSDKForDevelopment/FaceTecSDK.framework/FaceTecSDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiDocumentScan/YotiDocumentScan.framework/YotiDocumentScan",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiDocumentScan/Microblink.framework/Microblink",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiDocumentScan/BlinkID.framework/BlinkID",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiNFC/YotiNFC.framework/YotiNFC",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiNetwork/YotiNetwork.framework/YotiNetwork",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKCore/YotiSDKCore.framework/YotiSDKCore",
@@ -194,14 +195,15 @@
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKDocument/YotiSDKDocument.framework/YotiSDKDocument",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKFace/YotiSDKFace.framework/YotiSDKFace",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKFaceTec/YotiSDKFaceTec.framework/YotiSDKFaceTec",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKFaceTec/FaceTecSDK.framework/FaceTecSDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKIdentityDocument/YotiSDKIdentityDocument.framework/YotiSDKIdentityDocument",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FaceTecSDK/FaceTecSDK.framework/FaceTecSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FaceTecSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiDocumentScan.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Microblink.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlinkID.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiNFC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiNetwork.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKCore.framework",
@@ -209,7 +211,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKDocument.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKFace.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKFaceTec.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FaceTecSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YotiSDKIdentityDocument.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
 			);

@@ -16,7 +16,9 @@ Pod::Spec.new do |spec|
       "${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKSupplementaryDocument",
       "${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKFace",
       "${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKFaceTec",
-      "${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKFaceCapture"
+      "${PODS_XCFRAMEWORKS_BUILD_DIR}/YotiSDKFaceCapture",
+      "${PODS_XCFRAMEWORKS_BUILD_DIR}/FaceTecSDK",
+      "${PODS_XCFRAMEWORKS_BUILD_DIR}/FaceTecSDKForDevelopment"
     ]
   }
   spec.source = {
